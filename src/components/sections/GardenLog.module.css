@@ -1,0 +1,58 @@
+.section { margin-bottom: 8rem; }
+.sectionHeader { text-align: center; margin-bottom: 4rem; }
+.sectionLabel { font-size: 0.75rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--accent-amber); margin-bottom: 1rem; display: block; }
+.sectionTitle { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 300; color: var(--text-primary); }
+
+.terminal {
+  background: #0d0d12;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: 3rem;
+  font-family: 'Space Mono', monospace;
+}
+
+.terminalHeader {
+  background: rgba(255,255,255,0.03);
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.dot { width: 12px; height: 12px; border-radius: 50%; }
+.red { background: #ff5f56; }
+.yellow { background: #ffbd2e; }
+.green { background: #27c93f; }
+
+.terminalTitle { margin-left: auto; font-size: 0.75rem; color: var(--text-muted); }
+
+.body {
+  padding: 1.5rem;
+  height: 300px;
+  overflow-y: auto;
+  font-size: 0.85rem;
+  line-height: 1.8;
+}
+
+.line { display: flex; gap: 0.75rem; margin-bottom: 0.5rem; }
+.prompt { color: var(--accent-gold); white-space: nowrap; }
+.command { color: var(--text-primary); }
+
+.output {
+  color: var(--text-secondary);
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+  white-space: pre-wrap;
+}
+
+.cursor {
+  display: inline-block;
+  width: 8px;
+  height: 1.2em;
+  background: var(--accent-gold);
+  animation: blink 1s step-end infinite;
+  vertical-align: middle;
+  margin-left: 0.25rem;
+}

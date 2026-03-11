@@ -1,0 +1,26 @@
+.toggle {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  z-index: 100;
+  padding: 1rem 0.5rem;
+  background: var(--bg-secondary);
+  border: 1px solid rgba(244, 208, 63, 0.2);
+  border-right: none;
+  border-radius: 8px 0 0 8px;
+  color: var(--accent-gold);
+  font-family: 'Space Mono', monospace;
+  font-size: 0.7rem;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  letter-spacing: 0.2em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.toggle:hover {
+  background: var(--accent-gold);
+  color: var(--bg-primary);
+  padding-right: 1rem;
+}

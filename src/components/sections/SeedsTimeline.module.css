@@ -1,0 +1,70 @@
+.section {
+  margin-bottom: 8rem;
+  padding: 4rem 0;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.sectionHeader { text-align: center; margin-bottom: 4rem; }
+.sectionLabel { font-size: 0.75rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--accent-amber); margin-bottom: 1rem; display: block; }
+.sectionTitle { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 300; color: var(--text-primary); }
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.seedItem {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 1.5rem 2rem;
+  background: var(--bg-secondary);
+  border-left: 2px solid var(--accent-gold);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  animation: slideIn 0.5s ease forwards;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.seedItem:hover {
+  background: var(--bg-tertiary);
+  transform: translateX(10px);
+  border-left-width: 4px;
+}
+
+.seedTime {
+  font-size: 0.75rem;
+  color: var(--accent-amber);
+  letter-spacing: 0.1em;
+  min-width: 80px;
+}
+
+.seedContent { flex: 1; }
+
+.seedTitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.25rem;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+}
+
+.seedDesc {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.seedTag {
+  font-size: 0.7rem;
+  padding: 0.25rem 0.75rem;
+  background: rgba(244, 208, 63, 0.1);
+  color: var(--accent-gold);
+  border-radius: 20px;
+  letter-spacing: 0.05em;
+}

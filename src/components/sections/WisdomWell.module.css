@@ -1,0 +1,63 @@
+.section { margin-bottom: 8rem; padding: 6rem 0; position: relative; overflow: hidden; }
+
+.container { max-width: 800px; margin: 0 auto; text-align: center; position: relative; }
+
+.well { font-size: 4rem; opacity: 0.1; margin-bottom: 2rem; }
+
+.sectionHeader { text-align: center; margin-bottom: 2rem; }
+.sectionLabel { font-size: 0.75rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--accent-amber); margin-bottom: 1rem; display: block; }
+.sectionTitle { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 300; color: var(--text-primary); }
+
+.quote {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+  font-style: italic;
+  color: var(--text-primary);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  min-height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.5s ease;
+}
+
+.fade { opacity: 0; }
+
+.author {
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent-amber);
+  margin-bottom: 2rem;
+}
+
+.nav { display: flex; gap: 1rem; justify-content: center; }
+
+.btn {
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: transparent;
+  color: var(--text-secondary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.btn:hover { border-color: var(--accent-gold); color: var(--accent-gold); }
+
+.dots { display: flex; gap: 0.5rem; align-items: center; }
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dotActive { background: var(--accent-gold); }

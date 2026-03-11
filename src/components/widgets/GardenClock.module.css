@@ -1,0 +1,21 @@
+.clock {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  z-index: 100;
+  background: rgba(18, 18, 26, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(244, 208, 63, 0.2);
+  padding: 1rem 1.5rem;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.85rem;
+  color: var(--accent-gold);
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.clock:hover {
+  border-color: var(--accent-gold);
+  box-shadow: 0 0 20px rgba(244, 208, 63, 0.2);
+}

@@ -1,0 +1,36 @@
+.section {
+  text-align: center;
+  padding: 6rem 0;
+  position: relative;
+}
+
+.mark {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 12rem;
+  color: var(--accent-gold);
+  opacity: 0.1;
+  line-height: 0;
+  position: absolute;
+  top: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--text-primary);
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  line-height: 1.5;
+}
+
+.author {
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent-amber);
+}

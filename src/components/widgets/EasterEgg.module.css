@@ -1,0 +1,24 @@
+.egg {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  z-index: 1000;
+  background: var(--bg-secondary);
+  border: 1px solid var(--accent-gold);
+  padding: 3rem;
+  text-align: center;
+  transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  pointer-events: none;
+}
+
+.active { transform: translate(-50%, -50%) scale(1); }
+
+.title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem;
+  color: var(--accent-gold);
+  margin-bottom: 1rem;
+}
+
+.text { color: var(--text-secondary); font-size: 0.9rem; }

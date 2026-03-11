@@ -1,0 +1,75 @@
+.section { margin-bottom: 8rem; padding: 4rem 0; }
+.sectionHeader { text-align: center; margin-bottom: 4rem; }
+.sectionLabel { font-size: 0.75rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--accent-amber); margin-bottom: 1rem; display: block; }
+.sectionTitle { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 300; color: var(--text-primary); }
+
+.rings {
+  position: relative;
+  margin-top: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+}
+
+.center {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background: var(--accent-gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  z-index: 10;
+  box-shadow: 0 0 40px rgba(244, 208, 63, 0.3);
+}
+
+.ring {
+  position: absolute;
+  border: 1px solid rgba(244, 208, 63, 0.1);
+  border-radius: 50%;
+  transition: all 0.4s ease;
+}
+
+.ring:hover {
+  border-color: rgba(244, 208, 63, 0.4);
+  background: rgba(244, 208, 63, 0.02);
+}
+
+.ring1 { width: 120px; height: 120px; }
+.ring2 { width: 200px; height: 200px; }
+.ring3 { width: 280px; height: 280px; }
+.ring4 { width: 360px; height: 360px; }
+
+.marker {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: var(--accent-gold);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.marker:hover {
+  transform: scale(1.5);
+  box-shadow: 0 0 20px var(--accent-gold);
+}
+
+.tooltip {
+  position: absolute;
+  background: var(--bg-secondary);
+  border: 1px solid var(--accent-gold);
+  padding: 0.75rem 1rem;
+  font-size: 0.8rem;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 100;
+  color: var(--text-primary);
+}
+
+.marker:hover .tooltip { opacity: 1; }

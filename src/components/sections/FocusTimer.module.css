@@ -1,0 +1,79 @@
+.section { margin-bottom: 8rem; padding: 4rem 0; }
+.sectionHeader { text-align: center; margin-bottom: 4rem; }
+.sectionLabel { font-size: 0.75rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--accent-amber); margin-bottom: 1rem; display: block; }
+.sectionTitle { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 300; color: var(--text-primary); }
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  margin-top: 3rem;
+  align-items: center;
+}
+
+.timerDisplay {
+  background: var(--bg-secondary);
+  border: 1px solid rgba(255,255,255,0.05);
+  padding: 3rem;
+  text-align: center;
+  position: relative;
+}
+
+.timerRing {
+  width: 200px;
+  height: 200px;
+  margin: 0 auto 2rem;
+  position: relative;
+}
+
+.timerRing svg { transform: rotate(-90deg); }
+.ringBg { fill: none; stroke: rgba(255,255,255,0.05); stroke-width: 4; }
+.ringProgress { fill: none; stroke: var(--accent-gold); stroke-width: 4; stroke-linecap: round; transition: stroke-dashoffset 1s linear, stroke 0.3s ease; }
+
+.timerTime {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3rem;
+  color: var(--text-primary);
+}
+
+.timerLabel {
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+}
+
+.controls { display: flex; gap: 1rem; justify-content: center; }
+
+.timerBtn {
+  padding: 0.75rem 1.5rem;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.1);
+  color: var(--text-secondary);
+  font-family: 'Space Mono', monospace;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.timerBtn:hover { border-color: var(--accent-gold); color: var(--accent-gold); }
+.active { background: var(--accent-gold); border-color: var(--accent-gold); color: var(--bg-primary); }
+
+.focusStats { display: flex; flex-direction: column; gap: 1.5rem; }
+
+.focusStat {
+  background: var(--bg-secondary);
+  border: 1px solid rgba(255,255,255,0.05);
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.focusStatLabel { font-size: 0.8rem; color: var(--text-secondary); }
+.focusStatValue { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; color: var(--accent-gold); }

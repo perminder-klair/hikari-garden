@@ -1,0 +1,62 @@
+.section { margin-bottom: 8rem; }
+.sectionHeader { text-align: center; margin-bottom: 4rem; }
+.sectionLabel { font-size: 0.75rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--accent-amber); margin-bottom: 1rem; display: block; }
+.sectionTitle { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 300; color: var(--text-primary); }
+
+.plot {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.5rem;
+  margin-top: 3rem;
+  padding: 2rem;
+  background: var(--bg-secondary);
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.day {
+  aspect-ratio: 1;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.05);
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+
+.day:hover {
+  border-color: var(--accent-gold);
+  transform: scale(1.1);
+  z-index: 10;
+}
+
+.completed {
+  background: var(--accent-gold);
+  border-color: var(--accent-gold);
+  color: var(--bg-primary);
+}
+
+.partial {
+  background: rgba(244, 208, 63, 0.3);
+  border-color: var(--accent-gold);
+}
+
+.today { box-shadow: 0 0 0 2px var(--accent-gold); }
+
+.legend {
+  display: flex;
+  gap: 2rem;
+  margin-top: 1.5rem;
+  justify-content: center;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.legendItem { display: flex; align-items: center; gap: 0.5rem; }
+.legendDot { width: 12px; height: 12px; border-radius: 2px; }
+.empty { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); }
+.legendPartial { background: rgba(244, 208, 63, 0.3); }
+.legendCompleted { background: var(--accent-gold); }
