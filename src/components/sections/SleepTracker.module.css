@@ -278,3 +278,31 @@
   font-size: 0.9rem;
   color: var(--text-primary);
 }
+
+@media (max-width: 768px) {
+  .section {
+    padding: 1.5rem;
+  }
+
+  .statsBar {
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .formRow {
+    grid-template-columns: 1fr;
+  }
+
+  .sleepDetails {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .qualitySelector {
+    flex-wrap: wrap;
+  }
+}

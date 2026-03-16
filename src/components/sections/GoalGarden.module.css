@@ -304,3 +304,26 @@
 .milestone[data-completed="true"] span {
   text-decoration: line-through;
 }
+
+@media (max-width: 768px) {
+  .section {
+    padding: 1.5rem;
+  }
+
+  .statsBar {
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .formRow {
+    flex-direction: column;
+  }
+
+  .addForm {
+    padding: 1rem;
+  }
+
+  .goalTitleRow {
+    flex-wrap: wrap;
+  }
+}

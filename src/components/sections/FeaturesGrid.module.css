@@ -80,3 +80,22 @@
   color: var(--text-secondary);
   line-height: 1.7;
 }
+
+@media (max-width: 768px) {
+  .features {
+    margin-bottom: 4rem;
+  }
+
+  .sectionHeader {
+    margin-bottom: 2rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .card {
+    padding: 2rem;
+  }
+}

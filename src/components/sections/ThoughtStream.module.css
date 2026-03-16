@@ -87,3 +87,28 @@
   background: rgba(244, 208, 63, 0.1);
   color: var(--accent-gold);
 }
+
+@media (max-width: 768px) {
+  .section {
+    margin-bottom: 4rem;
+    padding: 2rem 0;
+  }
+
+  .sectionHeader {
+    margin-bottom: 2rem;
+  }
+
+  .river {
+    margin-top: 2rem;
+    padding: 1rem 0;
+  }
+
+  .node {
+    padding: 1rem 1.5rem;
+  }
+
+  .meta {
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+}

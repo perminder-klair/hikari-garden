@@ -21,3 +21,13 @@
   border-color: var(--accent-gold);
   box-shadow: 0 0 30px rgba(244, 208, 63, 0.3);
 }
+
+@media (max-width: 768px) {
+  .toggle {
+    bottom: 1rem;
+    right: 1rem;
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+}

@@ -56,3 +56,23 @@
   vertical-align: middle;
   margin-left: 0.25rem;
 }
+
+@media (max-width: 768px) {
+  .section {
+    margin-bottom: 4rem;
+  }
+
+  .sectionHeader {
+    margin-bottom: 2rem;
+  }
+
+  .terminal {
+    margin-top: 2rem;
+  }
+
+  .body {
+    padding: 1rem;
+    height: 250px;
+    font-size: 0.8rem;
+  }
+}

@@ -292,3 +292,31 @@
   border-color: #3498db;
   color: white;
 }
+
+@media (max-width: 768px) {
+  .section {
+    padding: 1.5rem;
+  }
+
+  .statsBar {
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    padding: 1rem;
+  }
+
+  .waterContainer {
+    width: 120px;
+    height: 160px;
+  }
+
+  .percentage {
+    font-size: 2rem;
+  }
+}

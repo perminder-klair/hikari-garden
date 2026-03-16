@@ -77,3 +77,24 @@
 
 .focusStatLabel { font-size: 0.8rem; color: var(--text-secondary); }
 .focusStatValue { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; color: var(--accent-gold); }
+
+@media (max-width: 768px) {
+  .section {
+    margin-bottom: 4rem;
+    padding: 2rem 0;
+  }
+
+  .sectionHeader {
+    margin-bottom: 2rem;
+  }
+
+  .container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .timerDisplay {
+    padding: 2rem;
+  }
+}

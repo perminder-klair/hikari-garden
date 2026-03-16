@@ -34,3 +34,17 @@
   text-transform: uppercase;
   color: var(--accent-amber);
 }
+
+@media (max-width: 768px) {
+  .section {
+    padding: 3rem 0;
+  }
+
+  .mark {
+    font-size: 8rem;
+  }
+
+  .text {
+    margin: 0 auto 1.5rem;
+  }
+}

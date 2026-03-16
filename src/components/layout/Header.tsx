@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import styles from './Header.module.css';
 
@@ -12,10 +13,21 @@ const navLinks = [
 ];
 
 export default function Header() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
-    <header>
+    <header className={styles.header}>
       <NavLink to="/" className={styles.logo}>HIKARI</NavLink>
-      <nav className={styles.nav}>
+      <button
+        className={`${styles.hamburger} ${menuOpen ? styles.hamburgerOpen : ''}`}
+        onClick={() => setMenuOpen(!menuOpen)}
+        aria-label="Toggle menu"
+      >
+        <span />
+        <span />
+        <span />
+      </button>
+      <nav className={`${styles.nav} ${menuOpen ? styles.navOpen : ''}`}>
         {navLinks.map(link => (
           <NavLink
             key={link.to}
@@ -23,6 +35,7 @@ export default function Header() {
             className={({ isActive }) =>
               `${styles.navLink} ${isActive ? styles.navLinkActive : ''}`
             }
+            onClick={() => setMenuOpen(false)}
           >
             {link.label}
           </NavLink>

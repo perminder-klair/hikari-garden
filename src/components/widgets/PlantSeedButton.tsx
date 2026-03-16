@@ -7,7 +7,7 @@ export default function PlantSeedButton() {
   return (
     <button className={styles.btn} onClick={plantSeed}>
       <span>+</span>
-      <span>Plant Seed</span>
+      <span className={styles.label}>Plant Seed</span>
     </button>
   );
 }

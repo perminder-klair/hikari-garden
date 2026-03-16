@@ -266,3 +266,37 @@
 .trendIndicator svg {
   color: var(--accent-gold);
 }
+
+@media (max-width: 768px) {
+  .section {
+    padding: 1.5rem;
+  }
+
+  .statsBar {
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .card {
+    padding: 1rem;
+  }
+
+  .cardHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .moodSelector {
+    justify-content: center;
+  }
+
+  .moodButton {
+    min-width: 60px;
+    padding: 0.75rem 0.5rem;
+  }
+
+  .timelineItem {
+    gap: 0.75rem;
+  }
+}

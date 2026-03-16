@@ -262,3 +262,22 @@
   color: #e74c3c;
   font-size: 0.85rem;
 }
+
+@media (max-width: 768px) {
+  .section {
+    padding: 1.5rem;
+  }
+
+  .statsBar {
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    padding: 1rem;
+  }
+}

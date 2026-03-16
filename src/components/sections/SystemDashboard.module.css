@@ -80,3 +80,26 @@
   font-family: 'Space Mono', monospace;
   transition: opacity 0.2s ease;
 }
+
+@media (max-width: 768px) {
+  .section {
+    margin-bottom: 4rem;
+    padding: 2rem 0;
+  }
+
+  .sectionHeader {
+    margin-bottom: 2rem;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

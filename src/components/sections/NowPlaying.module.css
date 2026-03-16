@@ -108,3 +108,36 @@
   background: var(--accent-gold);
   color: var(--bg-primary);
 }
+
+@media (max-width: 768px) {
+  .section {
+    margin-bottom: 4rem;
+    padding: 2rem 0;
+  }
+
+  .sectionHeader {
+    margin-bottom: 2rem;
+  }
+
+  .player {
+    grid-template-columns: 80px 1fr;
+    gap: 1rem;
+    padding: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .albumArt {
+    width: 80px;
+    height: 80px;
+    font-size: 2rem;
+  }
+
+  .controls {
+    grid-column: 1 / -1;
+    justify-content: center;
+  }
+
+  .trackTitle {
+    font-size: 1.2rem;
+  }
+}

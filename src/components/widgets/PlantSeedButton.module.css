@@ -23,3 +23,25 @@
 }
 
 .btn:active { transform: scale(0.95); }
+
+.label {}
+
+@media (max-width: 768px) {
+  .btn {
+    bottom: 4rem;
+    left: auto;
+    right: 1rem;
+    padding: 0;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    justify-content: center;
+    font-size: 1.1rem;
+    gap: 0;
+    letter-spacing: 0;
+  }
+
+  .label {
+    display: none;
+  }
+}

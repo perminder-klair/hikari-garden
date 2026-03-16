@@ -233,3 +233,26 @@
   border-radius: 8px;
   opacity: 0.3;
 }
+
+@media (max-width: 768px) {
+  .section {
+    padding: 1.5rem;
+  }
+
+  .statsBar {
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .forestGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .timerTime {
+    font-size: 3rem;
+  }
+}

@@ -24,3 +24,10 @@
   color: var(--bg-primary);
   padding-right: 1rem;
 }
+
+@media (max-width: 768px) {
+  .toggle {
+    padding: 0.6rem 0.3rem;
+    font-size: 0.6rem;
+  }
+}

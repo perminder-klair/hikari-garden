@@ -84,3 +84,24 @@
 .link:hover {
   color: var(--accent-gold);
 }
+
+@media (max-width: 768px) {
+  .top {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .footerNav {
+    gap: 1rem;
+  }
+
+  .navLink {
+    font-size: 0.7rem;
+  }
+
+  .bottom {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+}

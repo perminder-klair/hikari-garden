@@ -60,3 +60,16 @@
 .empty { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); }
 .legendPartial { background: rgba(244, 208, 63, 0.3); }
 .legendCompleted { background: var(--accent-gold); }
+
+@media (max-width: 768px) {
+  .section { margin-bottom: 4rem; }
+  .plot {
+    gap: 0.25rem;
+    padding: 1rem;
+    overflow-x: auto;
+  }
+  .legend {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+}

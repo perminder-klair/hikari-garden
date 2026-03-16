@@ -250,3 +250,32 @@
   border-color: var(--accent-gold);
   color: var(--bg-primary);
 }
+
+@media (max-width: 768px) {
+  .section {
+    padding: 1.5rem;
+  }
+
+  .statsBar {
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .calendarGrid,
+  .weekdays {
+    gap: 0.25rem;
+  }
+
+  .weekday {
+    font-size: 0.65rem;
+    padding: 0.25rem;
+  }
+
+  .dayNumber {
+    font-size: 0.7rem;
+  }
+
+  .card {
+    padding: 1rem;
+  }
+}

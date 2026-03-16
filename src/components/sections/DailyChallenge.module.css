@@ -245,3 +245,23 @@
   border-color: var(--accent-gold);
   color: var(--accent-gold);
 }
+
+@media (max-width: 768px) {
+  .section {
+    padding: 1.5rem;
+  }
+
+  .statsBar {
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .challengeCard {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .challengeHeader {
+    flex-wrap: wrap;
+  }
+}

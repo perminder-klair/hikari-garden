@@ -73,3 +73,30 @@
 }
 
 .marker:hover .tooltip { opacity: 1; }
+
+@media (max-width: 768px) {
+  .section {
+    margin-bottom: 4rem;
+    padding: 2rem 0;
+  }
+
+  .sectionHeader {
+    margin-bottom: 2rem;
+  }
+
+  .rings {
+    margin-top: 2rem;
+    min-height: 280px;
+  }
+
+  .ring1 { width: 80px; height: 80px; }
+  .ring2 { width: 140px; height: 140px; }
+  .ring3 { width: 200px; height: 200px; }
+  .ring4 { width: 260px; height: 260px; }
+
+  .center {
+    width: 45px;
+    height: 45px;
+    font-size: 1.2rem;
+  }
+}

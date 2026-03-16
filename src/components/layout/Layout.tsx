@@ -78,6 +78,7 @@ export default function Layout() {
         maxWidth: '1400px',
         margin: '0 auto',
         padding: '2rem 2rem 4rem',
+        overflowX: 'hidden',
       }}>
         <Header />
         <div key={location.pathname} style={{ animation: 'fadeIn 0.3s ease' }}>

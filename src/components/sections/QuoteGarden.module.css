@@ -230,3 +230,27 @@
   font-size: 0.85rem;
   color: var(--text-secondary);
 }
+
+@media (max-width: 768px) {
+  .section {
+    padding: 1.5rem;
+  }
+
+  .quoteCard {
+    padding: 1.5rem;
+  }
+
+  .quoteText {
+    font-size: 1.1rem;
+  }
+
+  .quoteActions {
+    gap: 0.75rem;
+  }
+
+  .navigation {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+  }
+}

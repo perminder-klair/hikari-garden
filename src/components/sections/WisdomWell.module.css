@@ -61,3 +61,18 @@
 }
 
 .dotActive { background: var(--accent-gold); }
+
+@media (max-width: 768px) {
+  .section {
+    margin-bottom: 4rem;
+    padding: 3rem 0;
+  }
+
+  .well {
+    font-size: 2.5rem;
+  }
+
+  .quote {
+    min-height: 80px;
+  }
+}

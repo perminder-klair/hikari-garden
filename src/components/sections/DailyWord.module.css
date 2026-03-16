@@ -77,3 +77,23 @@
 }
 
 .btn:hover { border-color: var(--accent-gold); color: var(--accent-gold); }
+
+@media (max-width: 768px) {
+  .section {
+    margin-bottom: 4rem;
+    padding: 2rem 0;
+  }
+
+  .sectionHeader {
+    margin-bottom: 2rem;
+  }
+
+  .card {
+    padding: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .japanese {
+    font-size: 2rem;
+  }
+}

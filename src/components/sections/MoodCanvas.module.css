@@ -262,3 +262,21 @@
   padding-top: 0.5rem;
   border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
+
+@media (max-width: 768px) {
+  .section {
+    padding: 1.5rem;
+  }
+
+  .moodOptions {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .moodGrid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  }
+
+  .addForm {
+    padding: 1rem;
+  }
+}

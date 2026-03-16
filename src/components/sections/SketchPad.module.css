@@ -171,3 +171,19 @@
 .info svg {
   color: var(--accent-gold);
 }
+
+@media (max-width: 768px) {
+  .section {
+    padding: 1.5rem;
+  }
+
+  .toolbar {
+    gap: 0.5rem;
+    padding: 0.75rem;
+  }
+
+  .canvasContainer {
+    padding: 0.5rem;
+    overflow-x: auto;
+  }
+}

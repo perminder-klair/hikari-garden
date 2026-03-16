@@ -60,3 +60,26 @@
   text-transform: uppercase;
   color: var(--text-muted);
 }
+
+@media (max-width: 768px) {
+  .section {
+    margin-bottom: 4rem;
+  }
+
+  .sectionHeader {
+    margin-bottom: 2rem;
+  }
+
+  .constellation {
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    min-height: auto;
+  }
+
+  .avatar {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+  }
+}

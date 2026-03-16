@@ -301,3 +301,28 @@
   color: var(--text-secondary);
   font-size: 0.85rem;
 }
+
+@media (max-width: 768px) {
+  .section {
+    padding: 1.5rem;
+  }
+
+  .toolbar {
+    flex-direction: column;
+  }
+
+  .searchBox {
+    min-width: 0;
+  }
+
+  .linkHeader {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .linkMeta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}

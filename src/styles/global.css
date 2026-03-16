@@ -161,6 +161,12 @@ body.zen-mode .zen-toggle::after {
   .mood-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem 1rem 3rem !important;
+  }
+}
+
 @media (max-width: 640px) {
   nav { display: none; }
   .stats { grid-template-columns: 1fr; gap: 2rem; }

@@ -68,3 +68,19 @@
 
 .progress { height: 2px; background: rgba(255,255,255,0.1); margin-top: 1rem; overflow: hidden; }
 .progressBar { height: 100%; background: var(--accent-gold); transition: width 0.5s ease; }
+
+@media (max-width: 768px) {
+  .section {
+    margin-bottom: 4rem;
+  }
+
+  .sectionHeader {
+    margin-bottom: 2rem;
+  }
+
+  .bookshelf {
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+}
