@@ -31,7 +31,7 @@ export default function Footer() {
         <div className={styles.left}>© 2026 Hikari Garden</div>
         <div className={styles.right}>
           <a href="#" className={styles.link}>RSS</a>
-          <a href="#" className={styles.link}>GitHub</a>
+          <a href="https://github.com/perminder-klair/hikari-garden" target="_blank" rel="noopener noreferrer" className={styles.link}>GitHub</a>
           <a href="#" className={styles.link}>Contact</a>
         </div>
       </div>
