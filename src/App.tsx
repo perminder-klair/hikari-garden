@@ -7,6 +7,9 @@ import HomePage from './pages/HomePage';
 import GardenPage from './pages/GardenPage';
 import ThoughtsPage from './pages/ThoughtsPage';
 import CollectionPage from './pages/CollectionPage';
+import WellnessPage from './pages/WellnessPage';
+import SystemPage from './pages/SystemPage';
+import WorkshopPage from './pages/WorkshopPage';
 import ConnectPage from './pages/ConnectPage';
 
 export default function App() {
@@ -20,6 +23,9 @@ export default function App() {
               <Route path="garden" element={<GardenPage />} />
               <Route path="thoughts" element={<ThoughtsPage />} />
               <Route path="collection" element={<CollectionPage />} />
+              <Route path="wellness" element={<WellnessPage />} />
+              <Route path="system" element={<SystemPage />} />
+              <Route path="workshop" element={<WorkshopPage />} />
               <Route path="connect" element={<ConnectPage />} />
             </Route>
           </Routes>

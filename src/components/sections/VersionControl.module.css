@@ -1,0 +1,139 @@
+.versionControl {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 2rem;
+  margin: 2rem 0;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.title {
+  font-family: 'Space Mono', monospace;
+  font-size: 1.1rem;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.icon {
+  color: var(--accent-gold);
+}
+
+.statsRow {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.statCard {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+}
+
+.statValue {
+  font-family: 'Space Mono', monospace;
+  font-size: 1.5rem;
+  color: var(--accent-gold);
+  margin-bottom: 0.25rem;
+}
+
+.statLabel {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+.branchesList {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.branchesTitle {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.branchItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.branchItem:last-child {
+  border-bottom: none;
+}
+
+.branchInfo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.branchIcon {
+  color: var(--accent-gold);
+}
+
+.branchName {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.85rem;
+  color: var(--text-primary);
+}
+
+.branchMeta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.branchStatus {
+  font-size: 0.7rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-family: 'Space Mono', monospace;
+}
+
+.statusMain {
+  background: rgba(39, 174, 96, 0.2);
+  color: #27ae60;
+}
+
+.statusDev {
+  background: rgba(52, 152, 219, 0.2);
+  color: #3498db;
+}
+
+.statusFeature {
+  background: rgba(155, 89, 182, 0.2);
+  color: #9b59b6;
+}
+
+.commitCount {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  font-family: 'Space Mono', monospace;
+}
+
+@media (max-width: 768px) {
+  .statsRow {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

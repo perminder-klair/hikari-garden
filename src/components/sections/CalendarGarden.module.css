@@ -1,0 +1,184 @@
+.calendarGarden {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 2rem;
+  margin: 2rem 0;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.title {
+  font-family: 'Space Mono', monospace;
+  font-size: 1.1rem;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.icon {
+  color: var(--accent-gold);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.monthYear {
+  font-family: 'Space Mono', monospace;
+  font-size: 1rem;
+  color: var(--text-primary);
+  min-width: 140px;
+  text-align: center;
+}
+
+.navBtn {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 0.5rem;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.navBtn:hover {
+  border-color: var(--accent-gold);
+  color: var(--accent-gold);
+}
+
+.calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.5rem;
+}
+
+.dayHeader {
+  text-align: center;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  padding: 0.5rem;
+}
+
+.dayCell {
+  aspect-ratio: 1;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.dayCell:hover {
+  border-color: var(--accent-gold);
+}
+
+.dayCell.otherMonth {
+  opacity: 0.4;
+}
+
+.dayCell.today {
+  border-color: var(--accent-gold);
+  background: rgba(244, 208, 63, 0.1);
+}
+
+.dayNumber {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.85rem;
+  color: var(--text-primary);
+}
+
+.dayCell.today .dayNumber {
+  color: var(--accent-gold);
+  font-weight: bold;
+}
+
+.eventDots {
+  display: flex;
+  gap: 2px;
+  margin-top: 0.25rem;
+  flex-wrap: wrap;
+}
+
+.eventDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+.eventWork { background: #3498db; }
+.eventPersonal { background: #27ae60; }
+.eventReminder { background: #f39c12; }
+.eventMeeting { background: #9b59b6; }
+
+.upcomingEvents {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.sectionTitle {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+}
+
+.eventList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.eventItem {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+}
+
+.eventTime {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.8rem;
+  color: var(--accent-gold);
+  min-width: 60px;
+}
+
+.eventTitle {
+  flex: 1;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+}
+
+.eventTag {
+  font-size: 0.65rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-family: 'Space Mono', monospace;
+}
+
+@media (max-width: 768px) {
+  .calendar {
+    gap: 0.25rem;
+  }
+  .dayCell {
+    padding: 0.25rem;
+  }
+  .dayNumber {
+    font-size: 0.75rem;
+  }
+}

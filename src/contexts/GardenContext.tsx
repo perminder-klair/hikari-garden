@@ -1,11 +1,14 @@
-import { createContext, useContext, useState, useCallback, type ReactNode } from 'react';
+import { createContext, useContext, useState, useCallback, useRef, type ReactNode, type MutableRefObject } from 'react';
 import type { Seed } from '../types';
 import { seedTemplates } from '../data/gardenEvents';
+
+type RevealFn = (selector: string) => void;
 
 interface GardenContextType {
   seeds: Seed[];
   seedCount: number;
   plantSeed: () => void;
+  revealRef: MutableRefObject<RevealFn | null>;
 }
 
 const GardenContext = createContext<GardenContextType | null>(null);
@@ -19,6 +22,7 @@ const initialSeeds: Seed[] = [
 export function GardenProvider({ children }: { children: ReactNode }) {
   const [seeds, setSeeds] = useState<Seed[]>(initialSeeds);
   const [seedCount, setSeedCount] = useState(47);
+  const revealRef = useRef<RevealFn | null>(null);
 
   const plantSeed = useCallback(() => {
     const template = seedTemplates[Math.floor(Math.random() * seedTemplates.length)];
@@ -38,7 +42,7 @@ export function GardenProvider({ children }: { children: ReactNode }) {
   }, []);
 
   return (
-    <GardenContext.Provider value={{ seeds, seedCount, plantSeed }}>
+    <GardenContext.Provider value={{ seeds, seedCount, plantSeed, revealRef }}>
       {children}
     </GardenContext.Provider>
   );

@@ -12,8 +12,6 @@ import Header from './Header';
 import Footer from './Footer';
 import ScrollToTop from './ScrollToTop';
 
-import GardenClock from '../widgets/GardenClock';
-import WeatherWidget from '../widgets/WeatherWidget';
 import MoodToggle from '../widgets/MoodToggle';
 import PlantSeedButton from '../widgets/PlantSeedButton';
 import ZenToggle from '../widgets/ZenToggle';
@@ -68,8 +66,6 @@ export default function Layout() {
       <ScrollToTop />
       <Background />
 
-      <GardenClock />
-      <WeatherWidget />
       <MoodToggle />
       <PlantSeedButton />
       <ZenToggle />
@@ -81,7 +77,7 @@ export default function Layout() {
         zIndex: 2,
         maxWidth: '1400px',
         margin: '0 auto',
-        padding: '7rem 2rem 4rem',
+        padding: '2rem 2rem 4rem',
       }}>
         <Header />
         <div key={location.pathname} style={{ animation: 'fadeIn 0.3s ease' }}>

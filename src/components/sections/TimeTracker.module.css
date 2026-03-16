@@ -1,0 +1,186 @@
+.timeTracker {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 2rem;
+  margin: 2rem 0;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.title {
+  font-family: 'Space Mono', monospace;
+  font-size: 1.1rem;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.icon {
+  color: var(--accent-gold);
+}
+
+.timerDisplay {
+  text-align: center;
+  padding: 2rem;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+}
+
+.time {
+  font-family: 'Space Mono', monospace;
+  font-size: 3rem;
+  color: var(--accent-gold);
+  letter-spacing: 0.1em;
+}
+
+.taskName {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  margin-top: 0.5rem;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.controlBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.startBtn {
+  background: #27ae60;
+  color: white;
+}
+
+.startBtn:hover {
+  background: #229954;
+}
+
+.pauseBtn {
+  background: #f39c12;
+  color: white;
+}
+
+.pauseBtn:hover {
+  background: #e67e22;
+}
+
+.stopBtn {
+  background: #e74c3c;
+  color: white;
+}
+
+.stopBtn:hover {
+  background: #c0392b;
+}
+
+.sessionsList {
+  border-top: 1px solid var(--border-color);
+  padding-top: 1.5rem;
+}
+
+.sectionTitle {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+}
+
+.session {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  margin-bottom: 0.5rem;
+}
+
+.sessionIcon {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(244, 208, 63, 0.1);
+  color: var(--accent-gold);
+}
+
+.sessionInfo {
+  flex: 1;
+}
+
+.sessionTask {
+  font-size: 0.9rem;
+  color: var(--text-primary);
+}
+
+.sessionTime {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+.sessionDuration {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.9rem;
+  color: var(--accent-gold);
+}
+
+.statsRow {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.statCard {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 1rem;
+  text-align: center;
+}
+
+.statValue {
+  font-family: 'Space Mono', monospace;
+  font-size: 1.25rem;
+  color: var(--accent-gold);
+}
+
+.statLabel {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  margin-top: 0.25rem;
+}
+
+@media (max-width: 768px) {
+  .time {
+    font-size: 2rem;
+  }
+  .statsRow {
+    grid-template-columns: 1fr;
+  }
+}

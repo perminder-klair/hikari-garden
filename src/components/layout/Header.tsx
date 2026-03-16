@@ -5,6 +5,9 @@ const navLinks = [
   { to: '/garden', label: 'Garden' },
   { to: '/thoughts', label: 'Thoughts' },
   { to: '/collection', label: 'Collection' },
+  { to: '/wellness', label: 'Wellness' },
+  { to: '/system', label: 'System' },
+  { to: '/workshop', label: 'Workshop' },
   { to: '/connect', label: 'Connect' },
 ];
 

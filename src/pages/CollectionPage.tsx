@@ -1,21 +1,39 @@
 import ProjectsShowcase from '../components/sections/ProjectsShowcase';
-import SystemDashboard from '../components/sections/SystemDashboard';
-import AgentNetwork from '../components/sections/AgentNetwork';
 import NowPlaying from '../components/sections/NowPlaying';
 import ReadingList from '../components/sections/ReadingList';
 import RecipeCollection from '../components/sections/RecipeCollection';
 import TravelLog from '../components/sections/TravelLog';
+import PhotoGallery from '../components/sections/PhotoGallery';
+import GamingShelf from '../components/sections/GamingShelf';
+import MusicGarden from '../components/sections/MusicGarden';
+import PodcastGarden from '../components/sections/PodcastGarden';
+import WatchList from '../components/sections/WatchList';
+import BookmarkForest from '../components/sections/BookmarkForest';
+import ArchiveVault from '../components/sections/ArchiveVault';
+import LinkLibrary from '../components/sections/LinkLibrary';
+import LinkRotator from '../components/sections/LinkRotator';
+import ResourceLibrary from '../components/sections/ResourceLibrary';
+import HobbyTracker from '../components/sections/HobbyTracker';
 
 export default function CollectionPage() {
   return (
     <>
       <ProjectsShowcase />
-      <SystemDashboard />
-      <AgentNetwork />
       <NowPlaying />
+      <MusicGarden />
+      <PodcastGarden />
       <ReadingList />
+      <WatchList />
+      <GamingShelf />
+      <PhotoGallery />
       <RecipeCollection />
       <TravelLog />
+      <BookmarkForest />
+      <LinkLibrary />
+      <LinkRotator />
+      <ResourceLibrary />
+      <ArchiveVault />
+      <HobbyTracker />
     </>
   );
 }
