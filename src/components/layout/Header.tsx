@@ -1,32 +1,28 @@
+import { NavLink } from 'react-router-dom';
 import styles from './Header.module.css';
 
 const navLinks = [
-  { href: '#garden', label: 'Garden' },
-  { href: '#thoughts', label: 'Thoughts' },
-  { href: '#collection', label: 'Collection' },
-  { href: '#connect', label: 'Connect' },
+  { to: '/garden', label: 'Garden' },
+  { to: '/thoughts', label: 'Thoughts' },
+  { to: '/collection', label: 'Collection' },
+  { to: '/connect', label: 'Connect' },
 ];
 
 export default function Header() {
-  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    e.preventDefault();
-    const target = document.querySelector(href);
-    target?.scrollIntoView({ behavior: 'smooth' });
-  };
-
   return (
     <header>
-      <div className={styles.logo}>HIKARI</div>
+      <NavLink to="/" className={styles.logo}>HIKARI</NavLink>
       <nav className={styles.nav}>
         {navLinks.map(link => (
-          <a
-            key={link.href}
-            href={link.href}
-            className={styles.navLink}
-            onClick={(e) => handleClick(e, link.href)}
+          <NavLink
+            key={link.to}
+            to={link.to}
+            className={({ isActive }) =>
+              `${styles.navLink} ${isActive ? styles.navLinkActive : ''}`
+            }
           >
             {link.label}
-          </a>
+          </NavLink>
         ))}
       </nav>
     </header>
