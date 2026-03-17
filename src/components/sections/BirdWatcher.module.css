@@ -1,0 +1,525 @@
+.birdWatcher {
+  position: relative;
+  padding: 2rem;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #87ceeb 0%, #e0f6ff 50%, #f0f8ff 100%);
+  color: #2c3e50;
+  overflow: hidden;
+}
+
+.skyBackground {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.flyingBird {
+  position: absolute;
+  font-size: 1.5rem;
+  animation: fly linear infinite;
+  opacity: 0.7;
+}
+
+@keyframes fly {
+  0% {
+    transform: translateX(-50px) scaleX(1);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.7;
+  }
+  90% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateX(calc(100vw + 50px)) scaleX(1);
+    opacity: 0;
+  }
+}
+
+.clouds {
+  position: absolute;
+  inset: 0;
+}
+
+.cloud {
+  position: absolute;
+  width: 100px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 50px;
+  animation: drift 20s linear infinite;
+  opacity: 0;
+}
+
+.cloud::before,
+.cloud::after {
+  content: '';
+  position: absolute;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+}
+
+.cloud::before {
+  width: 50px;
+  height: 50px;
+  top: -25px;
+  left: 10px;
+}
+
+.cloud::after {
+  width: 60px;
+  height: 40px;
+  top: -15px;
+  right: 10px;
+}
+
+@keyframes drift {
+  0% {
+    transform: translateX(-150px);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.6;
+  }
+  90% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateX(calc(100vw + 150px));
+    opacity: 0;
+  }
+}
+
+.header {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #1a5276;
+}
+
+.subtitle {
+  color: #5d6d7e;
+  font-size: 1.1rem;
+}
+
+.statsBar {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.stat {
+  text-align: center;
+  padding: 1rem 1.5rem;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.statValue {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1a5276;
+}
+
+.statLabel {
+  font-size: 0.9rem;
+  color: #5d6d7e;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.filterBar {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.filterGroup {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.filterGroup label {
+  font-weight: 500;
+  color: #5d6d7e;
+}
+
+.filterGroup select {
+  padding: 0.5rem 1rem;
+  border: 1px solid #d5dbdb;
+  border-radius: 8px;
+  background: white;
+  color: #2c3e50;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.birdGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.birdCard {
+  background: rgba(255, 255, 255, 0.9);
+  border: 2px solid transparent;
+  border-radius: 16px;
+  padding: 1.25rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.birdCard:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.birdCard.spotted {
+  border-color: #27ae60;
+  background: linear-gradient(135deg, white 0%, rgba(39, 174, 96, 0.05) 100%);
+}
+
+.birdHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.sizeEmoji {
+  font-size: 2rem;
+}
+
+.rarityBadge {
+  font-size: 0.7rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 10px;
+  color: white;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.birdName {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 0.25rem;
+}
+
+.scientificName {
+  font-size: 0.85rem;
+  color: #7f8c8d;
+  font-style: italic;
+  margin-bottom: 0.75rem;
+}
+
+.description {
+  color: #5d6d7e;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.birdMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.metaItem {
+  font-size: 0.8rem;
+  padding: 0.25rem 0.5rem;
+  background: rgba(26, 82, 118, 0.1);
+  border-radius: 6px;
+  color: #1a5276;
+}
+
+.sightingCount {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  background: #27ae60;
+  color: white;
+  border-radius: 10px;
+  font-weight: 500;
+}
+
+.detailPanel {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  border-radius: 20px;
+  padding: 2rem;
+  width: 90%;
+  max-width: 500px;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  z-index: 100;
+}
+
+.detailHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.detailHeader h3 {
+  font-size: 1.5rem;
+  color: #1a5276;
+}
+
+.closeBtn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  background: #f5f5f5;
+  color: #666;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.closeBtn:hover {
+  background: #e0e0e0;
+}
+
+.detailScientific {
+  font-style: italic;
+  color: #7f8c8d;
+  margin-bottom: 1rem;
+}
+
+.detailDescription {
+  color: #5d6d7e;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.detailStats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.detailStat {
+  display: flex;
+  flex-direction: column;
+  padding: 0.75rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+.detailLabel {
+  font-size: 0.8rem;
+  color: #7f8c8d;
+  margin-bottom: 0.25rem;
+}
+
+.habitatTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.habitatTag {
+  font-size: 0.85rem;
+  padding: 0.4rem 0.8rem;
+  background: #e8f6f3;
+  color: #1e8449;
+  border-radius: 20px;
+}
+
+.sightingBtn {
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.sightingBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(39, 174, 96, 0.3);
+}
+
+.sightingForm {
+  margin-bottom: 1rem;
+}
+
+.sightingForm h4 {
+  margin-bottom: 1rem;
+  color: #1a5276;
+}
+
+.sightingForm input,
+.sightingForm textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #d5dbdb;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  margin-bottom: 0.75rem;
+}
+
+.sightingForm input:focus,
+.sightingForm textarea:focus {
+  outline: none;
+  border-color: #27ae60;
+}
+
+.formActions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.saveBtn,
+.cancelBtn {
+  flex: 1;
+  padding: 0.75rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.saveBtn {
+  background: #27ae60;
+  color: white;
+  border: none;
+}
+
+.saveBtn:hover {
+  background: #229954;
+}
+
+.cancelBtn {
+  background: transparent;
+  color: #7f8c8d;
+  border: 1px solid #d5dbdb;
+}
+
+.cancelBtn:hover {
+  background: #f5f5f5;
+}
+
+.sightingHistory {
+  border-top: 1px solid #eee;
+  padding-top: 1rem;
+}
+
+.sightingHistory h4 {
+  margin-bottom: 0.75rem;
+  color: #1a5276;
+}
+
+.sightingItem {
+  padding: 0.75rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+}
+
+.sightingDate {
+  font-size: 0.85rem;
+  color: #7f8c8d;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.sightingLocation {
+  font-weight: 500;
+  color: #1a5276;
+}
+
+.sightingNotes {
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 0.5rem;
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .birdWatcher {
+    padding: 1rem;
+  }
+
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .statsBar {
+    gap: 1rem;
+  }
+
+  .stat {
+    padding: 0.75rem 1rem;
+  }
+
+  .statValue {
+    font-size: 1.5rem;
+  }
+
+  .filterBar {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .birdGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .detailPanel {
+    width: 95%;
+    padding: 1.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .flyingBird,
+  .cloud {
+    animation: none;
+  }
+}

@@ -1,0 +1,471 @@
+.teaCeremony {
+  position: relative;
+  padding: 2rem;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f0e8 0%, #e8e0d5 50%, #d4c4b0 100%);
+  color: #3d3d3d;
+  overflow: hidden;
+}
+
+.steamContainer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.steam {
+  position: absolute;
+  bottom: 0;
+  width: 60px;
+  height: 100px;
+  background: radial-gradient(ellipse at center, rgba(255,255,255,0.4) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: rise 4s ease-out infinite;
+  opacity: 0;
+}
+
+@keyframes rise {
+  0% {
+    transform: translateY(0) scaleX(1);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-100vh) scaleX(2);
+    opacity: 0;
+  }
+}
+
+.header {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #5d4037;
+}
+
+.subtitle {
+  color: #8d6e63;
+  font-size: 1.1rem;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (max-width: 900px) {
+  .content {
+    grid-template-columns: 1fr;
+  }
+}
+
+.teaMenu h3 {
+  font-size: 1.2rem;
+  color: #5d4037;
+  margin-bottom: 1rem;
+}
+
+.teaGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.teaCard {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: white;
+  border: 2px solid transparent;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.teaCard:hover {
+  border-color: var(--tea-color, #8d6e63);
+  transform: translateX(4px);
+}
+
+.teaCard.selected {
+  border-color: var(--tea-color, #8d6e63);
+  background: linear-gradient(135deg, white 0%, rgba(141, 110, 99, 0.05) 100%);
+}
+
+.teaEmoji {
+  font-size: 1.8rem;
+}
+
+.teaInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.teaName {
+  font-weight: 600;
+  color: #3d3d3d;
+  font-size: 1rem;
+}
+
+.teaType {
+  font-size: 0.85rem;
+  color: #8d6e63;
+}
+
+.sessionCount {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  background: #e8e0d5;
+  border-radius: 10px;
+  color: #5d4037;
+}
+
+.brewingPanel {
+  background: white;
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+.teaDetails {
+  margin-bottom: 2rem;
+}
+
+.teaHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.detailEmoji {
+  font-size: 3rem;
+}
+
+.teaHeader h3 {
+  font-size: 1.5rem;
+  color: #5d4037;
+}
+
+.origin {
+  color: #8d6e63;
+  font-size: 0.95rem;
+}
+
+.description {
+  color: #5d4037;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.brewingSpecs {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.spec {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  background: #f5f0e8;
+  border-radius: 12px;
+  min-width: 100px;
+}
+
+.specLabel {
+  font-size: 0.85rem;
+  color: #8d6e63;
+  margin-bottom: 0.25rem;
+}
+
+.specValue {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #5d4037;
+}
+
+.benefits {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.benefit {
+  font-size: 0.85rem;
+  padding: 0.4rem 0.8rem;
+  background: #e8f5e9;
+  color: #2e7d32;
+  border-radius: 20px;
+}
+
+.timerSection {
+  border-top: 1px solid #e8e0d5;
+  padding-top: 1.5rem;
+}
+
+.startBtn {
+  width: 100%;
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, #5d4037 0%, #8d6e63 100%);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.startBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(93, 64, 55, 0.3);
+}
+
+.btnIcon {
+  font-size: 1.3rem;
+}
+
+.activeTimer {
+  text-align: center;
+}
+
+.timerDisplay {
+  margin-bottom: 1rem;
+}
+
+.timeValue {
+  display: block;
+  font-size: 4rem;
+  font-weight: 700;
+  color: #5d4037;
+  font-variant-numeric: tabular-nums;
+}
+
+.timeLabel {
+  font-size: 1rem;
+  color: #8d6e63;
+}
+
+.timerProgress {
+  height: 8px;
+  background: #e8e0d5;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.progressBar {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 1s linear;
+}
+
+.stopBtn {
+  padding: 0.75rem 1.5rem;
+  background: #ef5350;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.stopBtn:hover {
+  background: #d32f2f;
+}
+
+.sessionForm {
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+  background: #f5f0e8;
+  border-radius: 12px;
+}
+
+.sessionForm h4 {
+  margin-bottom: 1rem;
+  color: #5d4037;
+}
+
+.rating {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.star {
+  font-size: 1.5rem;
+  color: #e0e0e0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.star.filled {
+  color: #ffc107;
+}
+
+.notesInput {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #d7ccc8;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  resize: vertical;
+  margin-bottom: 1rem;
+}
+
+.notesInput:focus {
+  outline: none;
+  border-color: #8d6e63;
+}
+
+.formActions {
+  display: flex;
+  gap: 1rem;
+}
+
+.saveBtn {
+  flex: 1;
+  padding: 0.75rem 1.5rem;
+  background: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.saveBtn:hover {
+  background: #43a047;
+}
+
+.skipBtn {
+  padding: 0.75rem 1.5rem;
+  background: transparent;
+  color: #8d6e63;
+  border: 1px solid #d7ccc8;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.skipBtn:hover {
+  background: #f5f0e8;
+}
+
+.sessionHistory {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 2rem auto 0;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+}
+
+.sessionHistory h3 {
+  color: #5d4037;
+  margin-bottom: 1rem;
+}
+
+.sessionList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.sessionItem {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem;
+  background: #f5f0e8;
+  border-radius: 8px;
+  flex-wrap: wrap;
+}
+
+.sessionTea {
+  font-weight: 600;
+  color: #5d4037;
+}
+
+.sessionDate {
+  font-size: 0.85rem;
+  color: #8d6e63;
+}
+
+.sessionRating {
+  color: #ffc107;
+}
+
+.sessionNote {
+  font-size: 0.9rem;
+  color: #666;
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .teaCeremony {
+    padding: 1rem;
+  }
+
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .timeValue {
+    font-size: 2.5rem;
+  }
+
+  .brewingSpecs {
+    gap: 1rem;
+  }
+
+  .spec {
+    min-width: 80px;
+    padding: 0.75rem;
+  }
+
+  .sessionItem {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .steam {
+    animation: none;
+  }
+}

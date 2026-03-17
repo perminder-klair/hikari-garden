@@ -16,6 +16,7 @@ import LanguageGarden from '../components/sections/LanguageGarden';
 import LearningTracker from '../components/sections/LearningTracker';
 import ScreenTime from '../components/sections/ScreenTime';
 import ZenGarden from '../components/sections/ZenGarden';
+import TeaCeremony from '../components/sections/TeaCeremony';
 
 export default function WellnessPage() {
   return (
@@ -38,6 +39,7 @@ export default function WellnessPage() {
       <LanguageGarden />
       <LearningTracker />
       <WeatherStation />
+      <TeaCeremony />
     </>
   );
 }

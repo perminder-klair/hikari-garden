@@ -14,6 +14,8 @@ import LinkLibrary from '../components/sections/LinkLibrary';
 import LinkRotator from '../components/sections/LinkRotator';
 import ResourceLibrary from '../components/sections/ResourceLibrary';
 import HobbyTracker from '../components/sections/HobbyTracker';
+import AstroGarden from '../components/sections/AstroGarden';
+import BirdWatcher from '../components/sections/BirdWatcher';
 
 export default function CollectionPage() {
   return (
@@ -34,6 +36,8 @@ export default function CollectionPage() {
       <ResourceLibrary />
       <ArchiveVault />
       <HobbyTracker />
+      <AstroGarden />
+      <BirdWatcher />
     </>
   );
 }
