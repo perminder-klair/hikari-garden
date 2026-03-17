@@ -12,6 +12,15 @@ interface ChangelogEntry {
 
 const changelog: ChangelogEntry[] = [
   {
+    version: '28.0.0',
+    date: '2026-03-17',
+    changes: [
+      { type: 'feature', description: 'Added ZenGarden - Interactive breathing exercises with guided patterns and visual animations' },
+      { type: 'feature', description: 'Added CrystalGrid - Intention manifestation tracker with crystal energy grid and goal setting' },
+      { type: 'feature', description: 'Added PoetryCorner - Curated poetry collection with reading mode and favorites' },
+    ],
+  },
+  {
     version: '27.0.0',
     date: '2026-03-16',
     changes: [
@@ -334,11 +343,11 @@ export default function Changelog() {
 
       <div className={styles.stats}>
         <div className={styles.stat}>
-          <span className={styles.statValue}>111+</span>
+          <span className={styles.statValue}>114</span>
           <span className={styles.statLabel}>Total Sections</span>
         </div>
         <div className={styles.stat}>
-          <span className={styles.statValue}>27</span>
+          <span className={styles.statValue}>28</span>
           <span className={styles.statLabel}>Major Releases</span>
         </div>
         <div className={styles.stat}>

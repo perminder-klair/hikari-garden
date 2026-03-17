@@ -15,6 +15,7 @@ import SubscriptionTracker from '../components/sections/SubscriptionTracker';
 import LanguageGarden from '../components/sections/LanguageGarden';
 import LearningTracker from '../components/sections/LearningTracker';
 import ScreenTime from '../components/sections/ScreenTime';
+import ZenGarden from '../components/sections/ZenGarden';
 
 export default function WellnessPage() {
   return (
@@ -23,6 +24,7 @@ export default function WellnessPage() {
       <MoodCanvas />
       <MoodTimeline />
       <MeditationSpace />
+      <ZenGarden />
       <SoundScape />
       <SleepTracker />
       <EnergyTracker />

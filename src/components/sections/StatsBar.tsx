@@ -13,8 +13,8 @@ export default function StatsBar() {
         <span className={styles.statLabel}>Seeds Planted</span>
       </div>
       <div className={styles.statItem}>
-        <span className={styles.statNumber}>12</span>
-        <span className={styles.statLabel}>In Bloom</span>
+        <span className={styles.statNumber}>114</span>
+        <span className={styles.statLabel}>Garden Sections</span>
       </div>
       <div className={styles.statItem}>
         <span className={styles.statNumber}>8</span>

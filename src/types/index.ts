@@ -92,3 +92,28 @@ export interface DashboardCard {
   info: string;
   metric: string;
 }
+
+export interface Crystal {
+  id: string;
+  name: string;
+  color: string;
+  intention: string;
+  activated: boolean;
+}
+
+export interface Poem {
+  id: string;
+  title: string;
+  author: string;
+  lines: string[];
+  favorite?: boolean;
+}
+
+export interface BreathingPattern {
+  name: string;
+  inhale: number;
+  hold: number;
+  exhale: number;
+  holdEmpty: number;
+  description: string;
+}

@@ -19,6 +19,7 @@ import QuoteGarden from '../components/sections/QuoteGarden';
 import AffirmationWall from '../components/sections/AffirmationWall';
 import SnippetVault from '../components/sections/SnippetVault';
 import SketchPad from '../components/sections/SketchPad';
+import PoetryCorner from '../components/sections/PoetryCorner';
 
 export default function ThoughtsPage() {
   return (
@@ -36,6 +37,7 @@ export default function ThoughtsPage() {
       <AffirmationWall />
       <QuoteCollection />
       <QuoteGarden />
+      <PoetryCorner />
       <MemoryPalace />
       <MemoryVault />
       <KnowledgeBase />
