@@ -1,5 +1,5 @@
 import { useState, useMemo } from 'react';
-import { Mushroom, MapPin, Calendar, Camera, Search, Leaf, AlertTriangle, Check } from 'lucide-react';
+import { Sprout, MapPin, Calendar, Camera, Search, Leaf, AlertTriangle, Check } from 'lucide-react';
 import styles from './FungiForage.module.css';
 
 interface MushroomEntry {
@@ -134,7 +134,7 @@ export default function FungiForage() {
   return (
     <div className={styles.container}>
       <div className={styles.header}>
-        <Mushroom className={styles.icon} />
+        <Sprout className={styles.icon} />
         <h2>Fungi Forage</h2>
         <p>Track your mushroom hunting adventures</p>
       </div>
