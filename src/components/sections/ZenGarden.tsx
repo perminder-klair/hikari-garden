@@ -16,7 +16,7 @@ export default function ZenGarden() {
   const [totalMinutes, setTotalMinutes] = useState(0);
 
   const animationRef = useRef<number | null>(null);
-  const phaseTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const phaseTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const getPhaseDuration = useCallback((p: Phase): number => {
     switch (p) {

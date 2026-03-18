@@ -52,7 +52,7 @@ export default function DreamJournal() {
     },
   ]);
   const [isAdding, setIsAdding] = useState(false);
-  const [newDream, setNewDream] = useState({ title: '', content: '', mood: 'vivid' as const, symbols: '' });
+  const [newDream, setNewDream] = useState({ title: '', content: '', mood: 'vivid' as Dream['mood'], symbols: '' });
 
   const addDream = () => {
     if (!newDream.title || !newDream.content) return;

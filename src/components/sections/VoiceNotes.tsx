@@ -32,7 +32,7 @@ export default function VoiceNotes() {
   const [playingId, setPlayingId] = useState<string | null>(null);
   const [newTranscript, setNewTranscript] = useState('');
   
-  const timerRef = useRef<NodeJS.Timeout | null>(null);
+  const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const mediaRecorderRef = useRef<MediaRecorder | null>(null);
 
   useEffect(() => {

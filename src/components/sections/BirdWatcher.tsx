@@ -145,7 +145,7 @@ interface Sighting {
   notes: string;
 }
 
-export function BirdWatcher() {
+export default function BirdWatcher() {
   const [sightings, setSightings] = useState<Sighting[]>([]);
   const [selectedBird, setSelectedBird] = useState<Bird | null>(null);
   const [filterRarity, setFilterRarity] = useState<Bird['rarity'] | 'all'>('all');

@@ -76,7 +76,7 @@ export default function GratitudeGarden() {
     },
   ]);
   const [isAdding, setIsAdding] = useState(false);
-  const [newEntry, setNewEntry] = useState({ content: '', category: 'moment' as const });
+  const [newEntry, setNewEntry] = useState({ content: '', category: 'moment' as GratitudeEntry['category'] });
   const [currentPrompt, setCurrentPrompt] = useState(0);
 
   useEffect(() => {

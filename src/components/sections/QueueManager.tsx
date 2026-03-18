@@ -5,7 +5,7 @@ import styles from './QueueManager.module.css';
 interface QueueJob {
   id: string;
   name: string;
-  status: 'pending' | 'running' | 'completed' | 'failed';
+  status: 'pending' | 'running' | 'paused' | 'completed' | 'failed';
   priority: 'low' | 'medium' | 'high' | 'critical';
   progress: number;
   duration: string;
@@ -24,6 +24,7 @@ const initialJobs: QueueJob[] = [
 const statusConfig = {
   pending: { color: '#9ca3af', icon: Clock, label: 'Pending' },
   running: { color: '#60a5fa', icon: Play, label: 'Running' },
+  paused: { color: '#fbbf24', icon: Pause, label: 'Paused' },
   completed: { color: '#34d399', icon: CheckCircle, label: 'Completed' },
   failed: { color: '#ef4444', icon: AlertCircle, label: 'Failed' },
 };

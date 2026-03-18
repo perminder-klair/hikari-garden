@@ -35,7 +35,7 @@ export default function EnvironmentVars() {
   const [showSecrets, setShowSecrets] = useState<Set<string>>(new Set());
   const [copiedId, setCopiedId] = useState<string | null>(null);
   const [filter, setFilter] = useState<string>('all');
-  const [newVar, setNewVar] = useState({ key: '', value: '', description: '', category: 'app' as const, isSecret: false });
+  const [newVar, setNewVar] = useState({ key: '', value: '', description: '', category: 'app' as EnvVar['category'], isSecret: false });
   const [isAdding, setIsAdding] = useState(false);
 
   const toggleSecret = (id: string) => {

@@ -21,6 +21,9 @@ import DailyChallenge from '../components/sections/DailyChallenge';
 import DailyCheckIn from '../components/sections/DailyCheckIn';
 import YearInPixels from '../components/sections/YearInPixels';
 import CrystalGrid from '../components/sections/CrystalGrid';
+import ForestBath from '../components/sections/ForestBath';
+import CloudGazer from '../components/sections/CloudGazer';
+import SeedLibrary from '../components/sections/SeedLibrary';
 
 export default function GardenPage() {
   return (
@@ -32,6 +35,9 @@ export default function GardenPage() {
       <GoalGarden />
       <IntentionsGarden />
       <CrystalGrid />
+      <ForestBath />
+      <CloudGazer />
+      <SeedLibrary />
       <PlantTracker />
       <WaterGarden />
       <FocusTimer />

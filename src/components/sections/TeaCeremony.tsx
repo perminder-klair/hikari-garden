@@ -90,7 +90,7 @@ interface Session {
   rating: number;
 }
 
-export function TeaCeremony() {
+export default function TeaCeremony() {
   const [selectedTea, setSelectedTea] = useState<Tea | null>(null);
   const [timerActive, setTimerActive] = useState(false);
   const [timeLeft, setTimeLeft] = useState(0);
@@ -99,7 +99,7 @@ export function TeaCeremony() {
   const [sessionNotes, setSessionNotes] = useState('');
   const [sessionRating, setSessionRating] = useState(5);
   const [steamParticles, setSteamParticles] = useState<number[]>([]);
-  const timerRef = useRef<NodeJS.Timeout | null>(null);
+  const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     const interval = setInterval(() => {

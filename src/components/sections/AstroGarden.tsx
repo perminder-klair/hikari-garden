@@ -40,8 +40,8 @@ const moonPhases: MoonPhase[] = [
 ];
 
 function getCurrentMoonPhase(date: Date): MoonPhase {
-  const year = date.getFullYear();
-  const month = date.getMonth() + 1;
+  let year = date.getFullYear();
+  let month = date.getMonth() + 1;
   const day = date.getDate();
   
   let c, e, jd, b;
@@ -58,7 +58,7 @@ function getCurrentMoonPhase(date: Date): MoonPhase {
   return moonPhases[phaseIndex];
 }
 
-export function AstroGarden() {
+export default function AstroGarden() {
   const [selectedSeason, setSelectedSeason] = useState<Constellation['season'] | 'all'>('all');
   const [currentPhase, setCurrentPhase] = useState<MoonPhase>(moonPhases[0]);
   const [starCount, setStarCount] = useState(0);

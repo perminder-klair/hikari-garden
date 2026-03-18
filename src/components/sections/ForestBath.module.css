@@ -1,0 +1,267 @@
+.forestBath {
+  padding: 2rem;
+  background: linear-gradient(135deg, #1a2f1a 0%, #0d1f0d 100%);
+  border-radius: 16px;
+  border: 1px solid rgba(139, 195, 74, 0.2);
+  min-height: 500px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.icon {
+  color: #8bc34a;
+  animation: breathe 4s ease-in-out infinite;
+}
+
+@keyframes breathe {
+  0%, 100% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.1); opacity: 1; }
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #e8f5e9;
+  margin: 0;
+}
+
+.subtitle {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: 0.25rem;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .content {
+    grid-template-columns: 1fr;
+  }
+}
+
+.timerCard {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid rgba(139, 195, 74, 0.15);
+}
+
+.timerDisplay {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.time {
+  font-size: 3rem;
+  font-weight: 300;
+  color: #8bc34a;
+  font-family: 'SF Mono', monospace;
+  letter-spacing: 0.05em;
+}
+
+.timerLabel {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.5);
+  margin-top: 0.5rem;
+}
+
+.controls {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+}
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  border: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btnPrimary {
+  background: linear-gradient(135deg, #4caf50 0%, #388e3c 100%);
+  color: white;
+}
+
+.btnPrimary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+}
+
+.btnSecondary {
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.btnSecondary:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.sensesCard {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid rgba(139, 195, 74, 0.15);
+}
+
+.sensesTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #e8f5e9;
+  margin: 0 0 1rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.sensesGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+}
+
+.senseItem {
+  background: rgba(139, 195, 74, 0.1);
+  border: 1px solid rgba(139, 195, 74, 0.2);
+  border-radius: 8px;
+  padding: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+}
+
+.senseItem:hover {
+  background: rgba(139, 195, 74, 0.2);
+  transform: translateY(-2px);
+}
+
+.senseItem.active {
+  background: rgba(139, 195, 74, 0.3);
+  border-color: #8bc34a;
+}
+
+.senseIcon {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.senseName {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.7);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.historyCard {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid rgba(139, 195, 74, 0.15);
+  grid-column: 1 / -1;
+}
+
+.historyTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #e8f5e9;
+  margin: 0 0 1rem 0;
+}
+
+.sessionList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.sessionItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.875rem 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sessionDate {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.sessionDuration {
+  font-size: 0.875rem;
+  color: #8bc34a;
+  font-weight: 500;
+}
+
+.sessionSenses {
+  display: flex;
+  gap: 0.25rem;
+  font-size: 0.875rem;
+}
+
+.emptyState {
+  text-align: center;
+  padding: 2rem;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.875rem;
+}
+
+.forestVisual {
+  position: relative;
+  height: 120px;
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+  border-radius: 8px;
+  background: linear-gradient(to bottom, #1a237e 0%, #0d47a1 50%, #1b5e20 50%, #2e7d32 100%);
+}
+
+.tree {
+  position: absolute;
+  bottom: 40%;
+  font-size: 2rem;
+  animation: sway 3s ease-in-out infinite;
+}
+
+@keyframes sway {
+  0%, 100% { transform: rotate(-2deg); }
+  50% { transform: rotate(2deg); }
+}
+
+.tree:nth-child(1) { left: 10%; animation-delay: 0s; }
+.tree:nth-child(2) { left: 30%; animation-delay: 0.5s; }
+.tree:nth-child(3) { left: 50%; animation-delay: 1s; }
+.tree:nth-child(4) { left: 70%; animation-delay: 1.5s; }
+.tree:nth-child(5) { left: 85%; animation-delay: 2s; }
+
+.bird {
+  position: absolute;
+  font-size: 0.875rem;
+  animation: fly 8s linear infinite;
+}
+
+@keyframes fly {
+  0% { transform: translateX(-100%) translateY(0); }
+  25% { transform: translateX(25vw) translateY(-10px); }
+  50% { transform: translateX(50vw) translateY(5px); }
+  75% { transform: translateX(75vw) translateY(-5px); }
+  100% { transform: translateX(calc(100% + 100px)) translateY(0); }
+}
+
+.bird:nth-child(6) { top: 20%; animation-delay: 0s; }
+.bird:nth-child(7) { top: 35%; animation-delay: 3s; }

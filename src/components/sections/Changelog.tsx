@@ -12,6 +12,15 @@ interface ChangelogEntry {
 
 const changelog: ChangelogEntry[] = [
   {
+    version: '30.0.0',
+    date: '2026-03-18',
+    changes: [
+      { type: 'feature', description: 'Added ForestBath - Shinrin-yoku (forest bathing) tracker with sensory engagement and animated nature scenes' },
+      { type: 'feature', description: 'Added CloudGazer - Cloud observation journal with sky types, weather tracking, and animated sky canvas' },
+      { type: 'feature', description: 'Added SeedLibrary - Plant seed collection manager with categories, quantities, and garden statistics' },
+    ],
+  },
+  {
     version: '28.0.0',
     date: '2026-03-17',
     changes: [
@@ -343,15 +352,15 @@ export default function Changelog() {
 
       <div className={styles.stats}>
         <div className={styles.stat}>
-          <span className={styles.statValue}>114</span>
+          <span className={styles.statValue}>120</span>
           <span className={styles.statLabel}>Total Sections</span>
         </div>
         <div className={styles.stat}>
-          <span className={styles.statValue}>28</span>
+          <span className={styles.statValue}>30</span>
           <span className={styles.statLabel}>Major Releases</span>
         </div>
         <div className={styles.stat}>
-          <span className={styles.statValue}>3</span>
+          <span className={styles.statValue}>4</span>
           <span className={styles.statLabel}>Days Active</span>
         </div>
       </div>
