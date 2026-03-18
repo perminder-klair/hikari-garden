@@ -1,0 +1,394 @@
+.container {
+  padding: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.header h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0.5rem 0;
+}
+
+.header p {
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.icon {
+  width: 48px;
+  height: 48px;
+  color: #60a5fa;
+  margin: 0 auto;
+}
+
+.mainContent {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+  .mainContent {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Visualizer */
+.visualizer {
+  position: relative;
+  height: 300px;
+  background: linear-gradient(180deg, #1e293b 0%, #334155 50%, #475569 100%);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.rainCanvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.playButton {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.playButton:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: scale(1.05);
+}
+
+.playButton.playing {
+  background: rgba(96, 165, 250, 0.3);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.sessionTime {
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: white;
+  font-family: monospace;
+}
+
+/* Controls */
+.controls {
+  background: var(--surface-color);
+  border-radius: 16px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.intensitySelector label,
+.moodSelector label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-bottom: 0.75rem;
+}
+
+.intensityButtons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+}
+
+.intensityBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.intensityBtn:hover {
+  border-color: #60a5fa;
+  color: var(--text-primary);
+}
+
+.intensityBtn.active {
+  background: rgba(96, 165, 250, 0.1);
+  border-color: #60a5fa;
+  color: #60a5fa;
+}
+
+.volumeControl {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--text-secondary);
+}
+
+.volumeSlider {
+  flex: 1;
+  height: 6px;
+  -webkit-appearance: none;
+  appearance: none;
+  background: var(--border-color);
+  border-radius: 3px;
+  outline: none;
+}
+
+.volumeSlider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #60a5fa;
+  cursor: pointer;
+}
+
+.moodGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.moodBtn {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.moodBtn:hover {
+  border-color: #60a5fa;
+  color: var(--text-primary);
+}
+
+.moodBtn.active {
+  background: rgba(96, 165, 250, 0.1);
+  border-color: #60a5fa;
+  color: #60a5fa;
+}
+
+/* Stats */
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.stat {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+}
+
+.stat svg {
+  color: #60a5fa;
+}
+
+/* Sessions List */
+.sessionsList h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.sessionCards {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.sessionCard {
+  background: var(--surface-color);
+  border-radius: 12px;
+  padding: 1rem;
+  border: 1px solid var(--border-color);
+}
+
+.sessionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.sessionDate {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+.sessionIntensity {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+.sessionIntensity.light {
+  background: rgba(96, 165, 250, 0.1);
+  color: #60a5fa;
+}
+
+.sessionIntensity.moderate {
+  background: rgba(59, 130, 246, 0.1);
+  color: #3b82f6;
+}
+
+.sessionIntensity.heavy {
+  background: rgba(37, 99, 235, 0.1);
+  color: #2563eb;
+}
+
+.sessionIntensity.storm {
+  background: rgba(30, 58, 138, 0.1);
+  color: #1e3a8a;
+}
+
+.sessionDetails {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.sessionDuration {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.sessionMood {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.sessionNotes {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin: 0;
+  font-style: italic;
+}
+
+/* Dialog */
+.dialogOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  padding: 1rem;
+}
+
+.dialog {
+  background: var(--surface-color);
+  border-radius: 16px;
+  padding: 1.5rem;
+  max-width: 400px;
+  width: 100%;
+}
+
+.dialog h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.25rem;
+  color: var(--text-primary);
+}
+
+.dialog p {
+  margin: 0 0 1rem;
+  color: var(--text-secondary);
+}
+
+.notesInput {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background: var(--background-color);
+  color: var(--text-primary);
+  font-family: inherit;
+  resize: vertical;
+  margin-bottom: 1rem;
+}
+
+.notesInput:focus {
+  outline: none;
+  border-color: #60a5fa;
+}
+
+.dialogButtons {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.dialogButtons button {
+  flex: 1;
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.discardBtn {
+  background: var(--border-color);
+  color: var(--text-secondary);
+}
+
+.discardBtn:hover {
+  background: #ef4444;
+  color: white;
+}
+
+.saveBtn {
+  background: #60a5fa;
+  color: white;
+}
+
+.saveBtn:hover {
+  background: #3b82f6;
+}

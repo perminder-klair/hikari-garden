@@ -6,6 +6,11 @@ export const gardenEvents: GardenEvent[] = [
   { message: 'The Agent Network pulses with activity', type: 'system' },
   { message: 'A book whispers from the Library', type: 'knowledge' },
   { message: 'The garden breathes in the quiet', type: 'ambient' },
+  { message: 'Rain falls gently on the garden paths', type: 'ambient' },
+  { message: 'The sun dial casts a new shadow', type: 'system' },
+  { message: 'Mushrooms emerge from the forest floor', type: 'growth' },
+  { message: 'Clouds drift across the digital sky', type: 'ambient' },
+  { message: 'Crystals hum with stored energy', type: 'system' },
 ];
 
 export const seedTemplates = [

@@ -24,6 +24,9 @@ import CrystalGrid from '../components/sections/CrystalGrid';
 import ForestBath from '../components/sections/ForestBath';
 import CloudGazer from '../components/sections/CloudGazer';
 import SeedLibrary from '../components/sections/SeedLibrary';
+import RainyDay from '../components/sections/RainyDay';
+import SunDial from '../components/sections/SunDial';
+import FungiForage from '../components/sections/FungiForage';
 
 export default function GardenPage() {
   return (
@@ -38,6 +41,9 @@ export default function GardenPage() {
       <ForestBath />
       <CloudGazer />
       <SeedLibrary />
+      <RainyDay />
+      <SunDial />
+      <FungiForage />
       <PlantTracker />
       <WaterGarden />
       <FocusTimer />

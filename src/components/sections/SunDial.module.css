@@ -1,0 +1,429 @@
+.container {
+  padding: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.header h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0.5rem 0;
+}
+
+.header p {
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.icon {
+  width: 48px;
+  height: 48px;
+  color: #f59e0b;
+  margin: 0 auto;
+}
+
+.mainGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .mainGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Dial Card */
+.dialCard {
+  background: var(--surface-color);
+  border-radius: 16px;
+  padding: 1.5rem;
+  border: 1px solid var(--border-color);
+}
+
+.dialHeader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+}
+
+.dialFace {
+  position: relative;
+  height: 200px;
+  background: linear-gradient(180deg, #dbeafe 0%, #bfdbfe 50%, #fef3c7 100%);
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.horizon {
+  position: absolute;
+  bottom: 20%;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.sun {
+  position: absolute;
+  transform: translate(-50%, 50%);
+  color: #f59e0b;
+  filter: drop-shadow(0 0 20px rgba(245, 158, 11, 0.5));
+  transition: all 0.5s ease;
+}
+
+.timeMarkers {
+  position: absolute;
+  bottom: 5%;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1rem;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+.dayProgress {
+  text-align: center;
+}
+
+.progressBar {
+  height: 8px;
+  background: var(--border-color);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+}
+
+.progressFill {
+  height: 100%;
+  background: linear-gradient(90deg, #f59e0b, #fbbf24);
+  border-radius: 4px;
+  transition: width 1s ease;
+}
+
+.dayProgress span {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+/* Events Card */
+.eventsCard {
+  background: var(--surface-color);
+  border-radius: 16px;
+  padding: 1.5rem;
+  border: 1px solid var(--border-color);
+}
+
+.eventsCard h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 1rem;
+}
+
+.eventsList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.event {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem;
+  background: var(--background-color);
+  border-radius: 8px;
+}
+
+.eventIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: rgba(245, 158, 11, 0.1);
+  border-radius: 8px;
+}
+
+.eventInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.eventName {
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.eventTime {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  font-family: monospace;
+}
+
+.daylightStats {
+  display: flex;
+  gap: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.stat {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.stat svg {
+  color: #f59e0b;
+}
+
+/* Moon Card */
+.moonCard {
+  background: var(--surface-color);
+  border-radius: 16px;
+  padding: 1.5rem;
+  border: 1px solid var(--border-color);
+}
+
+.moonDisplay {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.moonEmoji {
+  font-size: 4rem;
+  filter: drop-shadow(0 0 20px rgba(251, 191, 36, 0.3));
+}
+
+.moonInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.moonName {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.moonIllumination {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.moonCycle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cyclePhase {
+  opacity: 0.3;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.cyclePhase.active {
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+.cyclePhase span {
+  font-size: 1.5rem;
+}
+
+/* Terms Card */
+.termsCard {
+  background: var(--surface-color);
+  border-radius: 16px;
+  padding: 1.5rem;
+  border: 1px solid var(--border-color);
+}
+
+.termsHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+}
+
+.currentTerm {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.1), rgba(251, 191, 36, 0.1));
+  border-radius: 12px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid rgba(245, 158, 11, 0.2);
+}
+
+.termBadge {
+  display: inline-block;
+  font-size: 0.625rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #f59e0b;
+  margin-bottom: 0.5rem;
+}
+
+.currentTerm h4 {
+  margin: 0 0 0.5rem;
+  font-size: 1.125rem;
+  color: var(--text-primary);
+}
+
+.currentTerm p {
+  margin: 0 0 0.5rem;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.termDate {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  font-family: monospace;
+}
+
+.nextTerm {
+  text-align: center;
+  padding: 1rem;
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+.termsList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.term {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.875rem;
+}
+
+.term.current {
+  background: rgba(245, 158, 11, 0.1);
+}
+
+.termName {
+  color: var(--text-secondary);
+}
+
+.term.current .termName {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.termShortDate {
+  font-family: monospace;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+/* Season Card */
+.seasonCard {
+  background: var(--surface-color);
+  border-radius: 16px;
+  padding: 1.5rem;
+  border: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+@media (max-width: 640px) {
+  .seasonCard {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+.seasonInfo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.seasonIcon {
+  font-size: 3rem;
+}
+
+.seasonText {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.seasonLabel {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.seasonName {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.dayOfYear {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.yearProgress {
+  flex: 1;
+  max-width: 300px;
+}
+
+.yearBar {
+  height: 8px;
+  background: var(--border-color);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+}
+
+.yearFill {
+  height: 100%;
+  background: linear-gradient(90deg, #10b981, #34d399, #f59e0b, #f97316, #8b5cf6);
+  border-radius: 4px;
+  transition: width 1s ease;
+}
+
+.yearProgress span {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
