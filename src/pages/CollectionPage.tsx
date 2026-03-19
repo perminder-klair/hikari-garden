@@ -16,6 +16,7 @@ import ResourceLibrary from '../components/sections/ResourceLibrary';
 import HobbyTracker from '../components/sections/HobbyTracker';
 import AstroGarden from '../components/sections/AstroGarden';
 import BirdWatcher from '../components/sections/BirdWatcher';
+import { Stargazer } from '../components/sections/Stargazer';
 
 export default function CollectionPage() {
   return (
@@ -38,6 +39,7 @@ export default function CollectionPage() {
       <HobbyTracker />
       <AstroGarden />
       <BirdWatcher />
+      <Stargazer />
     </>
   );
 }

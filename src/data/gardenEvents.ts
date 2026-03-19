@@ -16,6 +16,11 @@ export const gardenEvents: GardenEvent[] = [
   { message: 'Koi glide through the digital pond', type: 'ambient' },
   { message: 'The bonsai whispers ancient wisdom', type: 'thought' },
   { message: 'A firefly glows with captured starlight', type: 'ambient' },
+  { message: 'Paper folds into delicate art in the studio', type: 'creative' },
+  { message: 'A telescope captures distant starlight', type: 'discovery' },
+  { message: 'Wind chimes sing their gentle melody', type: 'ambient' },
+  { message: 'Origami cranes take flight in imagination', type: 'creative' },
+  { message: 'Constellations map across the night canvas', type: 'discovery' },
 ];
 
 export const seedTemplates = [

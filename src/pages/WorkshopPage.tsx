@@ -18,6 +18,7 @@ import DocumentationHub from '../components/sections/DocumentationHub';
 import SocialGarden from '../components/sections/SocialGarden';
 import VoiceMemos from '../components/sections/VoiceMemos';
 import VoiceNotes from '../components/sections/VoiceNotes';
+import { OrigamiStudio } from '../components/sections/OrigamiStudio';
 
 export default function WorkshopPage() {
   return (
@@ -42,6 +43,7 @@ export default function WorkshopPage() {
       <WidgetManager />
       <VoiceMemos />
       <VoiceNotes />
+      <OrigamiStudio />
     </>
   );
 }

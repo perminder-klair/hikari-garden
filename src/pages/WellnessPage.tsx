@@ -17,6 +17,7 @@ import LearningTracker from '../components/sections/LearningTracker';
 import ScreenTime from '../components/sections/ScreenTime';
 import ZenGarden from '../components/sections/ZenGarden';
 import TeaCeremony from '../components/sections/TeaCeremony';
+import { WindChime } from '../components/sections/WindChime';
 
 export default function WellnessPage() {
   return (
@@ -40,6 +41,7 @@ export default function WellnessPage() {
       <LearningTracker />
       <WeatherStation />
       <TeaCeremony />
+      <WindChime />
     </>
   );
 }
