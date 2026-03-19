@@ -1,0 +1,352 @@
+.koiPond {
+  padding: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.icon {
+  color: #FF6B6B;
+}
+
+.subtitle {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.mainContent {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 2rem;
+}
+
+@media (max-width: 768px) {
+  .mainContent {
+    grid-template-columns: 1fr;
+  }
+}
+
+.pond {
+  position: relative;
+  height: 450px;
+  background: linear-gradient(180deg, #1A237E 0%, #0D47A1 50%, #01579B 100%);
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+  border: 4px solid #5D4037;
+  box-shadow: 
+    inset 0 0 60px rgba(0, 0, 0, 0.3),
+    0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+.water {
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(ellipse at 30% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(ellipse at 70% 80%, rgba(255, 255, 255, 0.05) 0%, transparent 40%);
+  animation: waterShimmer 4s ease-in-out infinite;
+}
+
+@keyframes waterShimmer {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 0.8; }
+}
+
+.lilyPad {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: radial-gradient(circle at 30% 30%, #81C784, #4CAF50);
+  border-radius: 50%;
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+.lilyPad::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: 50%;
+  height: 2px;
+  background: #2E7D32;
+  transform: translateY(-50%);
+}
+
+.ripple {
+  position: absolute;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.food {
+  position: absolute;
+  background: #8D6E63;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  pointer-events: none;
+}
+
+.koi {
+  position: absolute;
+  transform-origin: center;
+  transition: transform 0.1s linear;
+  pointer-events: none;
+}
+
+.koi.eating {
+  animation: eatPulse 0.3s ease;
+}
+
+@keyframes eatPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+.koiSvg {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.clickHint {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  background: rgba(255, 255, 255, 0.9);
+  color: #333;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  animation: pulse 2s ease infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.7; }
+  50% { opacity: 1; }
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.addKoi,
+.pondStats,
+.stats {
+  background: var(--bg-secondary);
+  padding: 1.25rem;
+  border-radius: 16px;
+  border: 1px solid var(--border-color);
+}
+
+.sectionTitle {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.koiTypes {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.koiType {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  border: 2px solid var(--border-color);
+  border-radius: 10px;
+  background: var(--bg-primary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.koiType:hover:not(:disabled) {
+  border-color: #FF6B6B;
+  transform: translateY(-2px);
+}
+
+.koiType:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.koiPreview {
+  width: 40px;
+  height: 16px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.koiType span {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+.koiCount {
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.stat {
+  margin-bottom: 1rem;
+}
+
+.stat:last-child {
+  margin-bottom: 0;
+}
+
+.stat span {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+}
+
+.bar {
+  height: 8px;
+  background: var(--bg-primary);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+}
+
+.barFill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.5s ease;
+}
+
+.cleanButton {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 10px;
+  background: #2196F3;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.cleanButton:hover:not(:disabled) {
+  background: #1976D2;
+  transform: translateY(-1px);
+}
+
+.cleanButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.statItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--border-color);
+  font-size: 0.9rem;
+}
+
+.statItem:last-child {
+  border-bottom: none;
+}
+
+.statItem span {
+  color: var(--text-secondary);
+}
+
+.statItem strong {
+  color: var(--text-primary);
+}
+
+.good {
+  color: #4CAF50;
+}
+
+.warning {
+  color: #FF9800;
+}
+
+.bad {
+  color: #E53935;
+}
+
+.resetButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  border: 2px solid var(--border-color);
+  border-radius: 10px;
+  background: transparent;
+  color: var(--text-secondary);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.resetButton:hover {
+  border-color: #E53935;
+  color: #E53935;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .water {
+    animation: none;
+  }
+  
+  .clickHint {
+    animation: none;
+  }
+  
+  .koi.eating {
+    animation: none;
+  }
+  
+  .koiType,
+  .cleanButton,
+  .resetButton {
+    transition: none;
+  }
+}

@@ -1,0 +1,416 @@
+.fireflyJar {
+  padding: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.icon {
+  color: #FFD700;
+  filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.5));
+}
+
+.subtitle {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.jarSelector {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+  padding: 0.5rem;
+  background: var(--bg-secondary);
+  border-radius: 12px;
+}
+
+.jarTab {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.jarTab:hover {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+.jarTab.active {
+  background: var(--bg-primary);
+  border-color: #FFD700;
+  color: var(--text-primary);
+}
+
+.deleteJar {
+  margin-left: 0.25rem;
+  padding: 0.25rem;
+  border: none;
+  background: transparent;
+  color: var(--text-secondary);
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.jarTab:hover .deleteJar {
+  opacity: 1;
+}
+
+.deleteJar:hover {
+  color: #E53935;
+}
+
+.newJarButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border: 2px dashed var(--border-color);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.newJarButton:hover {
+  border-color: #FFD700;
+  color: #FFD700;
+  background: rgba(255, 215, 0, 0.05);
+}
+
+.mainContent {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 2rem;
+}
+
+@media (max-width: 768px) {
+  .mainContent {
+    grid-template-columns: 1fr;
+  }
+}
+
+.jarContainer {
+  position: relative;
+  height: 400px;
+  background: linear-gradient(180deg, #0D1B2A 0%, #1B263B 50%, #0D1B2A 100%);
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: crosshair;
+  border: 3px solid rgba(255, 255, 255, 0.1);
+}
+
+.jarContainer.capturing {
+  cursor: crosshair;
+}
+
+.jarContainer.locked {
+  cursor: not-allowed;
+}
+
+.jarGlow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, rgba(255, 215, 0, 0.05) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.firefly {
+  position: absolute;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.1s ease;
+  pointer-events: auto;
+}
+
+.firefly:hover {
+  transform: scale(1.5);
+}
+
+.jarGlass {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.jarRim {
+  position: absolute;
+  top: 0;
+  left: 10%;
+  right: 10%;
+  height: 20px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, transparent 100%);
+  border-radius: 0 0 50% 50%;
+}
+
+.jarHighlight {
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  width: 30%;
+  height: 60%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, transparent 100%);
+  border-radius: 50%;
+  filter: blur(20px);
+}
+
+.emptyState {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.5);
+  pointer-events: none;
+}
+
+.emptyIcon {
+  margin-bottom: 1rem;
+  opacity: 0.5;
+}
+
+.emptyState p {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.emptyState span {
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
+
+.fireflyCount {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  padding: 0.5rem 1rem;
+  background: rgba(0, 0, 0, 0.5);
+  color: #FFD700;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.controlGroup {
+  background: var(--bg-secondary);
+  padding: 1.25rem;
+  border-radius: 16px;
+  border: 1px solid var(--border-color);
+}
+
+.controlTitle {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.controlButton {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  margin-bottom: 0.5rem;
+  border: 2px solid var(--border-color);
+  border-radius: 10px;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.controlButton:last-child {
+  margin-bottom: 0;
+}
+
+.controlButton:hover:not(:disabled) {
+  border-color: var(--accent-primary);
+  transform: translateY(-1px);
+}
+
+.controlButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.controlButton.danger:hover:not(:disabled) {
+  border-color: #E53935;
+  color: #E53935;
+}
+
+.controlButton.locked {
+  border-color: #FFD700;
+  color: #FFD700;
+}
+
+.stats {
+  background: var(--bg-secondary);
+  padding: 1.25rem;
+  border-radius: 16px;
+  border: 1px solid var(--border-color);
+}
+
+.statItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--border-color);
+  font-size: 0.9rem;
+}
+
+.statItem:last-child {
+  border-bottom: none;
+}
+
+.statItem span {
+  color: var(--text-secondary);
+}
+
+.statItem strong {
+  color: var(--text-primary);
+}
+
+.lockedText {
+  color: #FFD700;
+}
+
+.unlockedText {
+  color: #4CAF50;
+}
+
+/* Modal */
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modal {
+  background: var(--bg-primary);
+  padding: 1.5rem;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 320px;
+  animation: slideUp 0.2s ease;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.modal h3 {
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.modal input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.modal input:focus {
+  outline: none;
+  border-color: #FFD700;
+}
+
+.modalButtons {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.modalButtons button {
+  flex: 1;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.modalButtons button:first-child {
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+}
+
+.modalButtons button:last-child {
+  background: #FFD700;
+  color: #000;
+  font-weight: 500;
+}
+
+.modalButtons button:last-child:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .firefly {
+    transition: none;
+  }
+  
+  .jarTab,
+  .newJarButton,
+  .controlButton,
+  .modal,
+  .modalOverlay {
+    animation: none;
+  }
+}

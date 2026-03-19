@@ -27,6 +27,9 @@ import SeedLibrary from '../components/sections/SeedLibrary';
 import RainyDay from '../components/sections/RainyDay';
 import SunDial from '../components/sections/SunDial';
 import FungiForage from '../components/sections/FungiForage';
+import BonsaiBuilder from '../components/sections/BonsaiBuilder';
+import FireflyJar from '../components/sections/FireflyJar';
+import KoiPond from '../components/sections/KoiPond';
 
 export default function GardenPage() {
   return (
@@ -44,6 +47,9 @@ export default function GardenPage() {
       <RainyDay />
       <SunDial />
       <FungiForage />
+      <BonsaiBuilder />
+      <FireflyJar />
+      <KoiPond />
       <PlantTracker />
       <WaterGarden />
       <FocusTimer />

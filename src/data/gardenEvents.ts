@@ -11,6 +11,11 @@ export const gardenEvents: GardenEvent[] = [
   { message: 'Mushrooms emerge from the forest floor', type: 'growth' },
   { message: 'Clouds drift across the digital sky', type: 'ambient' },
   { message: 'Crystals hum with stored energy', type: 'system' },
+  { message: 'A bonsai branch reaches toward the light', type: 'growth' },
+  { message: 'Fireflies dance in their glass sanctuary', type: 'ambient' },
+  { message: 'Koi glide through the digital pond', type: 'ambient' },
+  { message: 'The bonsai whispers ancient wisdom', type: 'thought' },
+  { message: 'A firefly glows with captured starlight', type: 'ambient' },
 ];
 
 export const seedTemplates = [
