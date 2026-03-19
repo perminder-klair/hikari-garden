@@ -101,14 +101,10 @@ export default function BonsaiBuilder() {
     setBranches(newBranches);
   }, [bonsai.style]);
 
-  const handleToolAction = useCallback((branchId?: number) => {
+  const handleToolAction = useCallback(() => {
     switch (selectedTool) {
       case 'prune':
-        if (branchId !== undefined && branchId > 0) {
-          setBranches(prev => prev.filter(b => b.id !== branchId && !isDescendant(prev, b.id, branchId)));
-          setBonsai(prev => ({ ...prev, pruned: prev.pruned + 1, health: Math.min(100, prev.health + 2) }));
-          showMessage('Branch pruned with care');
-        }
+        showMessage('Click a branch to prune it');
         break;
       case 'water':
         setBonsai(prev => ({ ...prev, water: Math.min(100, prev.water + 15) }));
@@ -126,6 +122,13 @@ export default function BonsaiBuilder() {
         showMessage('Gentle breeze passes 🍃');
         break;
     }
+  }, [selectedTool]);
+
+  const pruneBranch = useCallback((branchId: number) => {
+    if (selectedTool !== 'prune' || branchId === 0) return;
+    setBranches(prev => prev.filter(b => b.id !== branchId));
+    setBonsai(prev => ({ ...prev, pruned: prev.pruned + 1, health: Math.min(100, prev.health + 2) }));
+    showMessage('Branch pruned with care');
   }, [selectedTool]);
 
   const isDescendant = (allBranches: Branch[], checkId: number, parentId: number): boolean => {
@@ -250,7 +253,7 @@ export default function BonsaiBuilder() {
                     strokeWidth={branch.width}
                     strokeLinecap="round"
                     className={`${styles.branch} ${selectedTool === 'prune' ? styles.prunable : ''}`}
-                    onClick={() => selectedTool === 'prune' && handleToolAction(branch.id)}
+                    onClick={() => pruneBranch(branch.id)}
                   />
                   {branch.hasLeaves && (
                     <>

@@ -39,7 +39,7 @@ export default function FireflyJar() {
   const [showNewJarModal, setShowNewJarModal] = useState(false);
   const [newJarName, setNewJarName] = useState('');
   const containerRef = useRef<HTMLDivElement>(null);
-  const animationRef = useRef<number>();
+  const animationRef = useRef<number | null>(null);
 
   const activeJar = jars.find(j => j.id === activeJarId) || jars[0];
 
@@ -237,8 +237,7 @@ export default function FireflyJar() {
             className={`${styles.jarTab} ${activeJarId === jar.id ? styles.active : ''}`}
             onClick={() => setActiveJarId(jar.id)}
           >
-            <Moon size={14} /
-            >
+            <Moon size={14} />
             {jar.name}
             {jar.isLocked && <Lock size={12} />}
             {jars.length > 1 && (
@@ -249,7 +248,7 @@ export default function FireflyJar() {
                   deleteJar(jar.id);
                 }}
               >
-                <Trash2 size={12} /
+                <Trash2 size={12} />
               </button>
             )}
           </button>
@@ -258,7 +257,7 @@ export default function FireflyJar() {
           className={styles.newJarButton}
           onClick={() => setShowNewJarModal(true)}
         >
-          <Plus size={16} /
+          <Plus size={16} />
           New Jar
         </button>
       </div>

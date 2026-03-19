@@ -42,8 +42,8 @@ export default function RainyDay() {
   const [showSaveDialog, setShowSaveDialog] = useState(false);
   const [sessionNotes, setSessionNotes] = useState('');
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const animationRef = useRef<number>();
-  const timerRef = useRef<NodeJS.Timeout>();
+  const animationRef = useRef<number | null>(null);
+  const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   const currentIntensity = rainIntensities.find(r => r.key === intensity)!;
 

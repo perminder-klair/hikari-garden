@@ -47,7 +47,7 @@ export default function KoiPond() {
   const [pondCleanliness, setPondCleanliness] = useState(100);
   const [totalFed, setTotalFed] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
-  const animationRef = useRef<number>();
+  const animationRef = useRef<number | null>(null);
 
   // Initialize with some koi
   useEffect(() => {
@@ -63,7 +63,7 @@ export default function KoiPond() {
     x,
     y,
     vx: (Math.random() - 0.5) * 0.3,
-    vy: (Math.random() - 0.5) * *0.3,
+    vy: (Math.random() - 0.5) * 0.3,
     size: 25 + Math.random() * 15,
     color: pattern,
     pattern,
