@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo, useCallback } from 'react';
 import { Users, Link2, MessageCircle, Calendar, ArrowUpRight, Plus, X } from 'lucide-react';
 import { useGarden } from '../../contexts/GardenContext';
 
@@ -35,26 +35,30 @@ export default function ConnectionWeb() {
     revealRef.current?.('.connection-web-section');
   }, [revealRef]);
 
-  const filteredConnections = filter === 'all' 
-    ? connections 
+  const filteredConnections = filter === 'all'
+    ? connections
     : connections.filter(c => c.tags.includes(filter));
 
   const allTags = Array.from(new Set(connections.flatMap(c => c.tags)));
-  
-  const stats = {
-    total: connections.length,
-    vital: connections.filter(c => c.strength === 5).length,
-    needAttention: connections.filter(c => {
-      const daysSince = Math.floor((Date.now() - new Date(c.lastContact).getTime()) / (1000 * 60 * 60 * 24));
-      return daysSince > 30;
-    }).length,
-    avgStrength: (connections.reduce((acc, c) => acc + c.strength, 0) / connections.length).toFixed(1),
-  };
 
-  const getDaysSince = (date: string) => {
-    const days = Math.floor((Date.now() - new Date(date).getTime()) / (1000 * 60 * 60 * 24));
+  const [currentTime] = useState(() => Date.now());
+
+  const stats = useMemo(() => {
+    return {
+      total: connections.length,
+      vital: connections.filter(c => c.strength === 5).length,
+      needAttention: connections.filter(c => {
+        const daysSince = Math.floor((currentTime - new Date(c.lastContact).getTime()) / (1000 * 60 * 60 * 24));
+        return daysSince > 30;
+      }).length,
+      avgStrength: (connections.reduce((acc, c) => acc + c.strength, 0) / connections.length).toFixed(1),
+    };
+  }, [connections, currentTime]);
+
+  const getDaysSince = useCallback((date: string) => {
+    const days = Math.floor((currentTime - new Date(date).getTime()) / (1000 * 60 * 60 * 24));
     return days === 0 ? 'Today' : days === 1 ? 'Yesterday' : `${days} days ago`;
-  };
+  }, [currentTime]);
 
   return (
     <section className="connection-web-section" id="connections" style={{ marginBottom: '8rem', padding: '4rem 0' }}>
