@@ -17,6 +17,7 @@ export default function ZenGarden() {
 
   const animationRef = useRef<number | null>(null);
   const phaseTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const runPhaseRef = useRef<((phase: Phase) => void) | null>(null);
 
   const getPhaseDuration = useCallback((p: Phase): number => {
     switch (p) {
@@ -87,9 +88,12 @@ export default function ZenGarden() {
     // Schedule next phase
     phaseTimeoutRef.current = setTimeout(() => {
       const nextPhase = getNextPhase(currentPhase);
-      runPhase(nextPhase);
+      runPhaseRef.current?.(nextPhase);
     }, duration * 1000);
   }, [getPhaseDuration, getPhaseScale, getNextPhase, scale]);
+
+  // Store reference to runPhase to avoid circular dependency
+  runPhaseRef.current = runPhase;
 
   const startBreathing = useCallback(() => {
     setIsActive(true);

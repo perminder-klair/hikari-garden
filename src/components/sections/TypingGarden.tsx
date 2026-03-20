@@ -27,19 +27,19 @@ export default function TypingGarden() {
   const inputRef = useRef<HTMLInputElement>(null);
   const { revealRef } = useGarden();
 
-  useEffect(() => {
-    revealRef.current?.('.typing-section');
-    newQuote();
-  }, [revealRef]);
-
-  const newQuote = () => {
+  const newQuote = useCallback(() => {
     const quote = quotes[Math.floor(Math.random() * quotes.length)];
     setCurrentQuote(quote);
     setInput('');
     setIsActive(false);
     setWpm(0);
     setAccuracy(100);
-  };
+  }, []);
+
+  useEffect(() => {
+    revealRef.current?.('.typing-section');
+    newQuote();
+  }, [revealRef, newQuote]);
 
   const calculateWpm = useCallback(() => {
     if (!startTime) return 0;
