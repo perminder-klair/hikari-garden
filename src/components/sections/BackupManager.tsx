@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Database, Download, Trash2, RotateCcw, CheckCircle, Clock, HardDrive } from 'lucide-react';
+import { Database, Download, Trash2, RotateCcw, CheckCircle, Clock } from 'lucide-react';
 import styles from './BackupManager.module.css';
 
 interface Backup {
