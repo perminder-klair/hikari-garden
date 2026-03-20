@@ -44,10 +44,10 @@ function getCurrentMoonPhase(date: Date): MoonPhase {
   let month = date.getMonth() + 1;
   const day = date.getDate();
   
-  let c, e, jd, b;
+  let jd, b;
   if (month < 3) { year--; month += 12; }
-  c = 365.25 * year;
-  e = 30.6 * month;
+  const c = 365.25 * year;
+  const e = 30.6 * month;
   jd = c + e + day - 694039.09;
   jd /= 29.5305882;
   b = Math.floor(jd);
