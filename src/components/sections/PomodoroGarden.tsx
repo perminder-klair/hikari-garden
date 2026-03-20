@@ -25,23 +25,7 @@ export default function PomodoroGarden() {
   ]);
   const [treesGrown, setTreesGrown] = useState(2);
 
-  useEffect(() => {
-    let interval: ReturnType<typeof setInterval> | null = null;
-    
-    if (isActive && timeLeft > 0) {
-      interval = setInterval(() => {
-        setTimeLeft(timeLeft - 1);
-      }, 1000);
-    } else if (timeLeft === 0) {
-      completeSession();
-    }
-    
-    return () => {
-      if (interval) clearInterval(interval);
-    };
-  }, [isActive, timeLeft]);
-
-  const completeSession = () => {
+  const completeSession = useCallback(() => {
     setIsActive(false);
     
     const newSession: Session = {
@@ -62,7 +46,23 @@ export default function PomodoroGarden() {
     const nextMode = mode === 'focus' ? 'break' : 'focus';
     setMode(nextMode);
     setTimeLeft(nextMode === 'focus' ? FOCUS_TIME : SHORT_BREAK);
-  };
+  }, [mode, sessions, treesGrown]);
+
+  useEffect(() => {
+    let interval: ReturnType<typeof setInterval> | null = null;
+    
+    if (isActive && timeLeft > 0) {
+      interval = setInterval(() => {
+        setTimeLeft(timeLeft - 1);
+      }, 1000);
+    } else if (timeLeft === 0) {
+      completeSession();
+    }
+    
+    return () => {
+      if (interval) clearInterval(interval);
+    };
+  }, [isActive, timeLeft, completeSession]);
 
   const toggleTimer = () => {
     setIsActive(!isActive);
