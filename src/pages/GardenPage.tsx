@@ -33,6 +33,9 @@ import KoiPond from '../components/sections/KoiPond';
 import LanternWalk from '../components/sections/LanternWalk';
 import CrystalCave from '../components/sections/CrystalCave';
 import CloudPaint from '../components/sections/CloudPaint';
+import PuzzleBox from '../components/sections/PuzzleBox';
+import MoodMosaic from '../components/sections/MoodMosaic';
+import AmbientGarden from '../components/sections/AmbientGarden';
 
 export default function GardenPage() {
   return (
@@ -56,6 +59,9 @@ export default function GardenPage() {
       <LanternWalk />
       <CrystalCave />
       <CloudPaint />
+      <PuzzleBox />
+      <MoodMosaic />
+      <AmbientGarden />
       <PlantTracker />
       <WaterGarden />
       <FocusTimer />

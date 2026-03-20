@@ -1,0 +1,309 @@
+.ambientGarden {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+  backdrop-filter: blur(10px);
+  border-radius: 24px;
+  padding: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin: 0;
+}
+
+.icon {
+  color: #a8edea;
+}
+
+.subtitle {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+.masterControl {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 16px;
+  margin-bottom: 1.5rem;
+}
+
+.masterVolume {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: rgba(255, 255, 255, 0.7);
+  flex: 1;
+}
+
+.masterSlider {
+  flex: 1;
+  max-width: 200px;
+  accent-color: #a8edea;
+}
+
+.masterVolume span {
+  min-width: 45px;
+  font-size: 0.9rem;
+}
+
+.playAllButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.playAllButton:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.playAllButton.playing {
+  background: rgba(168, 237, 234, 0.2);
+  border-color: rgba(168, 237, 234, 0.5);
+  color: #a8edea;
+}
+
+.presets {
+  margin-bottom: 1.5rem;
+}
+
+.presets h3 {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0 0 0.75rem 0;
+  text-align: center;
+}
+
+.presetGrid {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.presetButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.presetButton:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.presetIcon {
+  font-size: 1rem;
+}
+
+.soundGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.soundCard {
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 1rem;
+  transition: all 0.3s ease;
+}
+
+.soundCard:hover {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.soundCard.active {
+  border-color: rgba(168, 237, 234, 0.3);
+  background: rgba(168, 237, 234, 0.05);
+}
+
+.soundToggle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+  padding: 0;
+  margin-bottom: 0.75rem;
+}
+
+.soundIcon {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  font-size: 1.25rem;
+  transition: all 0.2s ease;
+}
+
+.soundCard.active .soundIcon {
+  background: rgba(168, 237, 234, 0.2);
+  color: #a8edea;
+}
+
+.soundName {
+  font-size: 0.9rem;
+  flex: 1;
+  text-align: left;
+}
+
+.playingIndicator {
+  width: 8px;
+  height: 8px;
+  background: #a8edea;
+  border-radius: 50%;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.8); }
+}
+
+.volumeControl {
+  position: relative;
+}
+
+.volumeSlider {
+  width: 100%;
+  height: 6px;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.1);
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+  cursor: pointer;
+}
+
+.volumeSlider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #a8edea;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.volumeSlider::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+}
+
+.volumeSlider::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #a8edea;
+  cursor: pointer;
+  border: none;
+}
+
+.volumeSlider::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 6px;
+  border-radius: 3px;
+  background: linear-gradient(90deg, #a8edea, #fed6e3);
+  width: var(--fill-percent, 0%);
+  pointer-events: none;
+}
+
+.status {
+  text-align: center;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.85rem;
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.statusDivider {
+  opacity: 0.3;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .ambientGarden {
+    padding: 1.25rem;
+  }
+  
+  .title {
+    font-size: 1.5rem;
+  }
+  
+  .masterControl {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .masterVolume {
+    width: 100%;
+  }
+  
+  .masterSlider {
+    max-width: none;
+  }
+  
+  .soundGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .presetGrid {
+    gap: 0.4rem;
+  }
+  
+  .presetButton {
+    padding: 0.4rem 0.75rem;
+    font-size: 0.8rem;
+  }
+}

@@ -1,0 +1,328 @@
+.moodMosaic {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+  backdrop-filter: blur(10px);
+  border-radius: 24px;
+  padding: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin: 0;
+}
+
+.icon {
+  color: #f5576c;
+}
+
+.subtitle {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+.dateNav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.dateNav button {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.dateNav button:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.dateNav span {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.9);
+  min-width: 180px;
+  text-align: center;
+}
+
+.tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 16px;
+}
+
+.colorPalette {
+  display: flex;
+  gap: 0.25rem;
+  flex-wrap: wrap;
+}
+
+.colorButton {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.colorButton:hover {
+  transform: scale(1.15);
+}
+
+.colorButton.selected {
+  border-color: white;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+}
+
+.brushControls {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.sizeSlider {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.85rem;
+}
+
+.sizeSlider input {
+  width: 80px;
+  accent-color: #f5576c;
+}
+
+.modeButtons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.modeButton {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 0.75rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.modeButton:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.modeButton.active {
+  background: rgba(245, 87, 108, 0.3);
+  border-color: rgba(245, 87, 108, 0.5);
+  color: #fff;
+}
+
+.actionButtons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.actionButtons button {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 0.75rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.actionButtons button:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.canvas {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: crosshair;
+  transition: all 0.2s ease;
+}
+
+.canvas.eraseMode {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2'%3E%3Cpath d='M20 20H7L3 16l9-9 8 8-4 4'/%3E%3Cpath d='M6.5 13.5L13 7'/%3E%3C/svg%3E") 12 12, pointer;
+}
+
+.gridOverlay {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 20px 20px;
+  pointer-events: none;
+}
+
+.tile {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  transition: transform 0.1s ease;
+}
+
+.canvas.drawing .tile {
+  transform: translate(-50%, -50%) scale(0.95);
+}
+
+.emptyState {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.4);
+  gap: 0.5rem;
+  pointer-events: none;
+}
+
+.emptyState svg {
+  opacity: 0.5;
+}
+
+.emptyState p {
+  font-size: 0.9rem;
+}
+
+.tileCount {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  padding: 0.25rem 0.75rem;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 12px;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.mosaicCalendar {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mosaicCalendar h3 {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0 0 1rem 0;
+  text-align: center;
+}
+
+.calendarGrid {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.calendarDay {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.calendarDay:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.calendarDay.active {
+  border-color: #f5576c;
+  background: rgba(245, 87, 108, 0.1);
+}
+
+.dayDate {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.dayPreview {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  width: 50px;
+  height: 50px;
+}
+
+.previewTile {
+  border-radius: 2px;
+  opacity: 0.8;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .moodMosaic {
+    padding: 1.25rem;
+  }
+  
+  .title {
+    font-size: 1.5rem;
+  }
+  
+  .tools {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .canvas {
+    height: 300px;
+  }
+  
+  .colorPalette {
+    justify-content: center;
+  }
+}
