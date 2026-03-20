@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { BookOpen, Star, Clock, Bookmark, CheckCircle2, Circle, TrendingUp } from 'lucide-react';
+import { BookOpen, Star, Bookmark, CheckCircle2, Circle, TrendingUp } from 'lucide-react';
 import { useGarden } from '../../contexts/GardenContext';
 
 interface Book {

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Scale, CheckCircle2, XCircle, Clock, ArrowRight, Filter, Circle } from 'lucide-react';
+import { Scale, CheckCircle2, XCircle, ArrowRight, Filter, Circle } from 'lucide-react';
 import { useGarden } from '../../contexts/GardenContext';
 
 interface Decision {

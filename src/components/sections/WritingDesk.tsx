@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { PenLine, Save, Trash2, Calendar, Clock } from 'lucide-react';
+import { PenLine, Save, Trash2, Calendar } from 'lucide-react';
 import { useGarden } from '../../contexts/GardenContext';
 
 interface WritingEntry {
