@@ -44,10 +44,10 @@ export default function BonsaiBuilder() {
   const [message, setMessage] = useState('');
   const canvasRef = useRef<HTMLDivElement>(null);
 
-  // Generate initial trunk
-  useEffect(() => {
-    generateTree();
-  }, [bonsai.style]);
+  const showMessage = useCallback((msg: string) => {
+    setMessage(msg);
+    setTimeout(() => setMessage(''), 2000);
+  }, []);
 
   const generateTree = useCallback(() => {
     const newBranches: Branch[] = [];
@@ -138,11 +138,6 @@ export default function BonsaiBuilder() {
     return false;
   };
 
-  const showMessage = (msg: string) => {
-    setMessage(msg);
-    setTimeout(() => setMessage(''), 2000);
-  };
-
   const growTree = useCallback(() => {
     if (bonsai.water < 20 || bonsai.sunlight < 20) {
       showMessage('Needs more water and sunlight to grow!');
@@ -163,9 +158,9 @@ export default function BonsaiBuilder() {
       setIsGrowing(false);
       showMessage('Your bonsai has grown! 🌳');
     }, 1000);
-  }, [bonsai.water, bonsai.sunlight, generateTree]);
+  }, [bonsai.water, bonsai.sunlight, generateTree, showMessage]);
 
-  const resetBonsai = () => {
+  const resetBonsai = useCallback(() => {
     setBonsai({
       health: 80,
       water: 60,
@@ -176,7 +171,12 @@ export default function BonsaiBuilder() {
     });
     generateTree();
     showMessage('New bonsai planted');
-  };
+  }, [generateTree, showMessage]);
+
+  // Generate initial tree on mount
+  useEffect(() => {
+    generateTree();
+  }, []);
 
   // Calculate branch end points
   const getBranchEnd = (branch: Branch) => ({
