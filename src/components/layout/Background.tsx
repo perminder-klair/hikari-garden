@@ -3,6 +3,12 @@ import { useParallax } from '../../hooks/useParallax';
 import { useTheme } from '../../contexts/ThemeContext';
 import styles from './Background.module.css';
 
+// Seeded random number generator for stable particle positions
+function seededRandom(seed: number): number {
+  const x = Math.sin(seed) * 10000;
+  return x - Math.floor(x);
+}
+
 export default function Background() {
   const parallaxRef = useParallax();
   const { bgOverride } = useTheme();
@@ -10,9 +16,9 @@ export default function Background() {
   const particles = useMemo(() => {
     return Array.from({ length: 30 }, (_, i) => ({
       key: i,
-      left: `${Math.random() * 100}%`,
-      animationDelay: `${Math.random() * 20}s`,
-      animationDuration: `${15 + Math.random() * 10}s`,
+      left: `${seededRandom(i) * 100}%`,
+      animationDelay: `${seededRandom(i + 100) * 20}s`,
+      animationDuration: `${15 + seededRandom(i + 200) * 10}s`,
     }));
   }, []);
 
