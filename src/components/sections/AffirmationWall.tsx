@@ -39,18 +39,19 @@ export default function AffirmationWall() {
   const [copied, setCopied] = useState(false);
   const { revealRef } = useGarden();
 
-  useEffect(() => {
-    revealRef.current?.('.affirmation-wall-section');
-    shuffleAffirmation();
-  }, [revealRef]);
-
   const shuffleAffirmation = () => {
-    const filtered = selectedCategory === 'all' 
-      ? affirmations 
+    const filtered = selectedCategory === 'all'
+      ? affirmations
       : affirmations.filter(a => a.category === selectedCategory);
     const random = filtered[Math.floor(Math.random() * filtered.length)];
     setCurrentAffirmation(random || affirmations[0]);
   };
+
+  useEffect(() => {
+    revealRef.current?.('.affirmation-wall-section');
+    shuffleAffirmation();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [revealRef]);
 
   const toggleFavorite = (id: string) => {
     setAffirmations(prev => prev.map(a => 
