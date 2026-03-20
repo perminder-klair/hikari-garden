@@ -4,6 +4,11 @@ import styles from './HabitTracker.module.css';
 
 type DayState = '' | 'partial' | 'completed';
 
+function seededRandom(seed: number): number {
+  const x = Math.sin(seed) * 10000;
+  return x - Math.floor(x);
+}
+
 export default function HabitTracker() {
   const ref = useIntersectionReveal<HTMLElement>();
   const today = new Date().getDate();
@@ -12,7 +17,7 @@ export default function HabitTracker() {
     return Array.from({ length: 35 }, (_, i) => {
       const dayNum = i + 1;
       if (dayNum < today) {
-        const rand = Math.random();
+        const rand = seededRandom(i);
         if (rand > 0.7) return 'completed' as DayState;
         if (rand > 0.4) return 'partial' as DayState;
       }

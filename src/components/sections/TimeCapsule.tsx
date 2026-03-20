@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Package, Clock, Calendar, Lock, Unlock, Eye, Trash2, Send } from 'lucide-react';
 import { useGarden } from '../../contexts/GardenContext';
 
@@ -53,6 +53,7 @@ export default function TimeCapsule() {
     unlockDate: '',
     mood: 'hopeful',
   });
+  const idCounter = useRef(0);
   const { revealRef } = useGarden();
 
   useEffect(() => {
@@ -66,9 +67,9 @@ export default function TimeCapsule() {
 
   const createCapsule = () => {
     if (!newCapsule.title.trim() || !newCapsule.content.trim() || !newCapsule.unlockDate) return;
-    
+
     const capsule: Capsule = {
-      id: Date.now().toString(),
+      id: `${Date.now()}-${idCounter.current++}`,
       title: newCapsule.title,
       content: newCapsule.content,
       createdAt: now.toISOString().split('T')[0],
@@ -76,7 +77,7 @@ export default function TimeCapsule() {
       isOpened: false,
       mood: newCapsule.mood,
     };
-    
+
     setCapsules([...capsules, capsule]);
     setNewCapsule({ title: '', content: '', unlockDate: '', mood: 'hopeful' });
     setIsCreating(false);

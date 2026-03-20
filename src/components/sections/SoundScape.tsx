@@ -20,11 +20,23 @@ const initialSounds: SoundChannel[] = [
   { id: 'lofi', name: 'Lo-Fi Beats', icon: <Music size={18} />, emoji: '🎵', volume: 0, isPlaying: false, color: '#f472b6' },
 ];
 
+function seededRandom(seed: number): number {
+  const x = Math.sin(seed) * 10000;
+  return x - Math.floor(x);
+}
+
 export default function SoundScape() {
   const [sounds, setSounds] = useState<SoundChannel[]>(initialSounds);
   const [masterVolume, setMasterVolume] = useState(50);
   const [isMasterMuted, setIsMasterMuted] = useState(false);
   const [activeMix, setActiveMix] = useState<string | null>(null);
+  const [waveformBars] = useState(() =>
+    Array.from({ length: 50 }, (_, i) => ({
+      id: i,
+      height: seededRandom(i) * 40 + 10,
+      animationDuration: 0.5 + seededRandom(i + 100) * 0.5,
+    }))
+  );
   const { revealRef } = useGarden();
 
   useEffect(() => {
@@ -236,10 +248,10 @@ export default function SoundScape() {
       </div>
 
       {/* Visual Waveform */}
-      <div style={{ 
-        marginTop: '2rem', 
-        height: '60px', 
-        background: 'var(--bg-secondary)', 
+      <div style={{
+        marginTop: '2rem',
+        height: '60px',
+        background: 'var(--bg-secondary)',
         borderRadius: '8px',
         display: 'flex',
         alignItems: 'center',
@@ -248,19 +260,19 @@ export default function SoundScape() {
         padding: '0 1rem',
         overflow: 'hidden',
       }}>
-        {Array.from({ length: 50 }).map((_, i) => {
+        {waveformBars.map((bar) => {
           const isActive = sounds.some(s => s.isPlaying);
-          const height = isActive ? Math.random() * 40 + 10 : 4;
+          const height = isActive ? bar.height : 4;
           return (
             <div
-              key={i}
+              key={bar.id}
               style={{
                 width: '4px',
                 height: `${height}px`,
                 background: isActive ? 'var(--accent-gold)' : 'rgba(255,255,255,0.1)',
                 borderRadius: '2px',
                 transition: 'all 0.3s ease',
-                animation: isActive ? `pulse ${0.5 + Math.random() * 0.5}s ease-in-out infinite alternate` : 'none',
+                animation: isActive ? `pulse ${bar.animationDuration}s ease-in-out infinite alternate` : 'none',
               }}
             />
           );
