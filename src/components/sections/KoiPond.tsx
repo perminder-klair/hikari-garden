@@ -49,15 +49,6 @@ export default function KoiPond() {
   const containerRef = useRef<HTMLDivElement>(null);
   const animationRef = useRef<number | null>(null);
 
-  // Initialize with some koi
-  useEffect(() => {
-    const initialKoi: Koi[] = [
-      createKoi(1, 30, 40, 'kohaku'),
-      createKoi(2, 70, 60, 'ogon'),
-    ];
-    setKoi(initialKoi);
-  }, []);
-
   const createKoi = (id: number, x: number, y: number, pattern: Koi['pattern']): Koi => ({
     id,
     x,
@@ -72,6 +63,15 @@ export default function KoiPond() {
     targetY: y,
     isEating: false,
   });
+
+  // Initialize with some koi
+  useEffect(() => {
+    const initialKoi: Koi[] = [
+      createKoi(1, 30, 40, 'kohaku'),
+      createKoi(2, 70, 60, 'ogon'),
+    ];
+    setKoi(initialKoi);
+  }, []);
 
   const addKoi = useCallback((pattern: Koi['pattern']) => {
     if (koi.length >= 10) return;
