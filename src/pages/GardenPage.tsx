@@ -30,6 +30,9 @@ import FungiForage from '../components/sections/FungiForage';
 import BonsaiBuilder from '../components/sections/BonsaiBuilder';
 import FireflyJar from '../components/sections/FireflyJar';
 import KoiPond from '../components/sections/KoiPond';
+import LanternWalk from '../components/sections/LanternWalk';
+import CrystalCave from '../components/sections/CrystalCave';
+import CloudPaint from '../components/sections/CloudPaint';
 
 export default function GardenPage() {
   return (
@@ -50,6 +53,9 @@ export default function GardenPage() {
       <BonsaiBuilder />
       <FireflyJar />
       <KoiPond />
+      <LanternWalk />
+      <CrystalCave />
+      <CloudPaint />
       <PlantTracker />
       <WaterGarden />
       <FocusTimer />
