@@ -58,10 +58,33 @@ function getCurrentMoonPhase(date: Date): MoonPhase {
   return moonPhases[phaseIndex];
 }
 
+interface Star {
+  id: number;
+  left: string;
+  top: string;
+  animationDelay: string;
+  animationDuration: string;
+}
+
+function seededRandom(seed: number): number {
+  const x = Math.sin(seed) * 10000;
+  return x - Math.floor(x);
+}
+
+function generateSeededStars(count: number): Star[] {
+  return Array.from({ length: count }, (_, i) => ({
+    id: i,
+    left: `${seededRandom(i) * 100}%`,
+    top: `${seededRandom(i + 1000) * 100}%`,
+    animationDelay: `${seededRandom(i + 2000) * 3}s`,
+    animationDuration: `${2 + seededRandom(i + 3000) * 2}s`,
+  }));
+}
+
 export default function AstroGarden() {
   const [selectedSeason, setSelectedSeason] = useState<Constellation['season'] | 'all'>('all');
   const [currentPhase, setCurrentPhase] = useState<MoonPhase>(moonPhases[0]);
-  const [starCount, setStarCount] = useState(0);
+  const [stars, setStars] = useState<Star[]>([]);
   const [observedConstellations, setObservedConstellations] = useState<string[]>([]);
 
   useEffect(() => {
@@ -75,7 +98,7 @@ export default function AstroGarden() {
   useEffect(() => {
     const generateStars = () => {
       const count = Math.floor(Math.random() * 30) + 50;
-      setStarCount(count);
+      setStars(generateSeededStars(count));
     };
     generateStars();
     const interval = setInterval(generateStars, 5000);
@@ -100,15 +123,15 @@ export default function AstroGarden() {
   return (
     <section className={styles.astroGarden}>
       <div className={styles.starField}>
-        {Array.from({ length: starCount }).map((_, i) => (
+        {stars.map(star => (
           <div
-            key={i}
+            key={star.id}
             className={styles.star}
             style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 3}s`,
-              animationDuration: `${2 + Math.random() * 2}s`,
+              left: star.left,
+              top: star.top,
+              animationDelay: star.animationDelay,
+              animationDuration: star.animationDuration,
             }}
           />
         ))}
