@@ -10,6 +10,11 @@ interface VoiceNote {
   audioUrl: string | null;
 }
 
+function seededRandom(seed: number): number {
+  const x = Math.sin(seed) * 10000;
+  return x - Math.floor(x);
+}
+
 export default function VoiceNotes() {
   const [isRecording, setIsRecording] = useState(false);
   const [recordingTime, setRecordingTime] = useState(0);
@@ -31,7 +36,13 @@ export default function VoiceNotes() {
   ]);
   const [playingId, setPlayingId] = useState<string | null>(null);
   const [newTranscript, setNewTranscript] = useState('');
-  
+  const [waveformBars] = useState(() =>
+    Array.from({ length: 20 }, (_, i) => ({
+      id: i,
+      height: seededRandom(i) * 60 + 20,
+    }))
+  );
+
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const mediaRecorderRef = useRef<MediaRecorder | null>(null);
 
@@ -125,13 +136,13 @@ export default function VoiceNotes() {
           <div className={styles.recorderVisual}>
             {isRecording ? (
               <div className={styles.waveform}>
-                {[...Array(20)].map((_, i) => (
-                  <div 
-                    key={i} 
+                {waveformBars.map((bar) => (
+                  <div
+                    key={bar.id}
                     className={styles.waveBar}
-                    style={{ 
-                      height: `${Math.random() * 60 + 20}%`,
-                      animationDelay: `${i * 0.05}s`
+                    style={{
+                      height: `${bar.height}%`,
+                      animationDelay: `${bar.id * 0.05}s`
                     }}
                   />
                 ))}
