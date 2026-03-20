@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Globe, Activity, CheckCircle, AlertCircle, Clock, Send, Copy, Check } from 'lucide-react';
+import { Globe, Activity, CheckCircle, AlertCircle, Clock, Copy, Check } from 'lucide-react';
 import styles from './APIDashboard.module.css';
 
 interface Endpoint {
@@ -37,7 +37,7 @@ const statusConfig = {
 };
 
 export default function APIDashboard() {
-  const [endpoints, setEndpoints] = useState<Endpoint[]>(initialEndpoints);
+  const [endpoints] = useState<Endpoint[]>(initialEndpoints);
   const [selectedEndpoint, setSelectedEndpoint] = useState<Endpoint | null>(null);
   const [testResponse, setTestResponse] = useState<string>('');
   const [copied, setCopied] = useState(false);
