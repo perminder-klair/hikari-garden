@@ -307,7 +307,9 @@ function WordSearch({ difficulty, onComplete }: { difficulty: Difficulty; onComp
   const [selectionStart, setSelectionStart] = useState<{ row: number; col: number } | null>(null);
 
   const generateGrid = useCallback(() => {
-    const wordList = wordLists[Math.floor(Math.random() * 3) as keyof typeof wordLists] || wordLists.garden;
+    const wordListKeys = ['nature', 'space', 'garden'] as const;
+    const wordListKey = wordListKeys[Math.floor(Math.random() * wordListKeys.length)];
+    const wordList = wordLists[wordListKey] || wordLists.garden;
     const words = wordList.slice(0, difficulty === 'easy' ? 4 : difficulty === 'medium' ? 5 : 6);
     
     const letters: string[][] = Array(gridSize).fill(null).map(() => 

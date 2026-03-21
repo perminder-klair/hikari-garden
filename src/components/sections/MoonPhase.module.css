@@ -1,0 +1,319 @@
+.moonPhase {
+  padding: 2rem;
+  background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+  border-radius: 16px;
+  margin: 1.5rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.moonPhase::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(ellipse 60% 50% at 50% 30%, rgba(200, 200, 255, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.header {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.titleGroup {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.icon {
+  font-size: 2.5rem;
+  animation: glow 4s ease-in-out infinite;
+}
+
+@keyframes glow {
+  0%, 100% { filter: drop-shadow(0 0 8px rgba(200, 200, 255, 0.5)); }
+  50% { filter: drop-shadow(0 0 20px rgba(200, 200, 255, 0.8)); }
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #e0e7ff, #c7d2fe, #a5b4fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.subtitle {
+  font-size: 0.875rem;
+  color: rgba(224, 231, 255, 0.6);
+  margin-top: 0.25rem;
+}
+
+.phaseInfo {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+  .phaseInfo {
+    grid-template-columns: 1fr;
+  }
+}
+
+.moonDisplay {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 16px;
+  border: 1px solid rgba(200, 200, 255, 0.1);
+}
+
+.moonVisual {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: #f0f0f0;
+  box-shadow: 
+    0 0 60px rgba(200, 200, 255, 0.3),
+    inset -20px -20px 40px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+}
+
+.moonShadow {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  background: #1a1a2e;
+  transition: all 0.8s ease;
+}
+
+.moonVisual.waxing .moonShadow {
+  left: 50%;
+  border-radius: 0 50% 50% 0;
+}
+
+.moonVisual.waning .moonShadow {
+  left: 0;
+  border-radius: 50% 0 0 50%;
+}
+
+.moonVisual.new .moonShadow {
+  width: 100%;
+  left: 0;
+}
+
+.moonVisual.full .moonShadow {
+  width: 0;
+}
+
+.moonName {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #e0e7ff;
+  margin-bottom: 0.5rem;
+}
+
+.moonIllumination {
+  font-size: 0.9rem;
+  color: rgba(224, 231, 255, 0.6);
+  margin-bottom: 0.75rem;
+}
+
+.moonDate {
+  font-size: 0.8rem;
+  color: rgba(224, 231, 255, 0.4);
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.detailCard {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(200, 200, 255, 0.1);
+  border-radius: 12px;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  transition: all 0.3s ease;
+}
+
+.detailCard:hover {
+  background: rgba(200, 200, 255, 0.05);
+  border-color: rgba(200, 200, 255, 0.2);
+}
+
+.detailIcon {
+  font-size: 1.5rem;
+}
+
+.detailText {
+  flex: 1;
+}
+
+.detailLabel {
+  font-size: 0.75rem;
+  color: rgba(224, 231, 255, 0.5);
+  margin-bottom: 0.25rem;
+}
+
+.detailValue {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #e0e7ff;
+}
+
+.moonCalendar {
+  position: relative;
+  z-index: 1;
+}
+
+.sectionTitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #e0e7ff;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.phases {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+}
+
+@media (max-width: 768px) {
+  .phases {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.phase {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(200, 200, 255, 0.1);
+  border-radius: 10px;
+  padding: 0.75rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.phase:hover {
+  background: rgba(200, 200, 255, 0.05);
+  transform: translateY(-2px);
+}
+
+.phase.current {
+  background: rgba(200, 200, 255, 0.1);
+  border-color: rgba(200, 200, 255, 0.3);
+  box-shadow: 0 0 20px rgba(200, 200, 255, 0.1);
+}
+
+.phaseIcon {
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.phaseName {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #e0e7ff;
+  margin-bottom: 0.25rem;
+}
+
+.phaseDate {
+  font-size: 0.7rem;
+  color: rgba(224, 231, 255, 0.4);
+}
+
+.rituals {
+  position: relative;
+  z-index: 1;
+  margin-top: 1.5rem;
+}
+
+.ritualList {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+@media (max-width: 768px) {
+  .ritualList {
+    grid-template-columns: 1fr;
+  }
+}
+
+.ritual {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(200, 200, 255, 0.1);
+  border-radius: 12px;
+  padding: 1rem;
+  transition: all 0.3s ease;
+}
+
+.ritual:hover {
+  background: rgba(200, 200, 255, 0.05);
+  transform: translateY(-2px);
+}
+
+.ritualIcon {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.ritualTitle {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #e0e7ff;
+  margin-bottom: 0.25rem;
+}
+
+.ritualText {
+  font-size: 0.75rem;
+  color: rgba(224, 231, 255, 0.5);
+  line-height: 1.4;
+}
+
+.floatingStars {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.floatingStar {
+  position: absolute;
+  font-size: 0.75rem;
+  opacity: 0.2;
+  animation: twinkle 3s ease-in-out infinite;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.1; transform: scale(0.8); }
+  50% { opacity: 0.3; transform: scale(1.1); }
+}

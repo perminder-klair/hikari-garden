@@ -1,0 +1,339 @@
+.dreamWeaver {
+  padding: 2rem;
+  background: linear-gradient(135deg, #0d0d1a 0%, #1a1a2e 50%, #16213e 100%);
+  border-radius: 16px;
+  margin: 1.5rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.dreamWeaver::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(ellipse 80% 50% at 20% 40%, rgba(147, 112, 219, 0.15) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 60%, rgba(72, 61, 139, 0.2) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.header {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.titleGroup {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.icon {
+  font-size: 2rem;
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #c9b8ff, #a78bfa, #8b5cf6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.subtitle {
+  font-size: 0.875rem;
+  color: rgba(199, 184, 255, 0.6);
+  margin-top: 0.25rem;
+}
+
+.tabs {
+  display: flex;
+  gap: 0.5rem;
+  position: relative;
+  z-index: 1;
+  flex-wrap: wrap;
+}
+
+.tab {
+  padding: 0.5rem 1rem;
+  background: rgba(139, 92, 246, 0.1);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  border-radius: 8px;
+  color: rgba(199, 184, 255, 0.7);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.875rem;
+}
+
+.tab:hover {
+  background: rgba(139, 92, 246, 0.2);
+  color: #c9b8ff;
+}
+
+.tab.active {
+  background: rgba(139, 92, 246, 0.3);
+  border-color: rgba(139, 92, 246, 0.5);
+  color: #fff;
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+}
+
+.journal {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .journal {
+    grid-template-columns: 1fr;
+  }
+}
+
+.journalPanel {
+  background: rgba(13, 13, 26, 0.6);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  border-radius: 12px;
+  padding: 1.25rem;
+}
+
+.panelTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #c9b8ff;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.input {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  border-radius: 8px;
+  padding: 0.75rem;
+  color: #e2e8f0;
+  font-family: inherit;
+  font-size: 0.875rem;
+  resize: vertical;
+  min-height: 80px;
+  transition: border-color 0.3s ease;
+}
+
+.input:focus {
+  outline: none;
+  border-color: rgba(139, 92, 246, 0.6);
+  box-shadow: 0 0 12px rgba(139, 92, 246, 0.2);
+}
+
+.input::placeholder {
+  color: rgba(199, 184, 255, 0.4);
+}
+
+.recordBtn {
+  margin-top: 0.75rem;
+  width: 100%;
+  padding: 0.625rem;
+  background: linear-gradient(135deg, #7c3aed, #8b5cf6);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.recordBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(124, 58, 237, 0.4);
+}
+
+.dreamList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  max-height: 300px;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+}
+
+.dreamList::-webkit-scrollbar {
+  width: 6px;
+}
+
+.dreamList::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+}
+
+.dreamList::-webkit-scrollbar-thumb {
+  background: rgba(139, 92, 246, 0.4);
+  border-radius: 3px;
+}
+
+.dreamEntry {
+  background: rgba(139, 92, 246, 0.1);
+  border: 1px solid rgba(139, 92, 246, 0.15);
+  border-radius: 8px;
+  padding: 0.75rem;
+  transition: all 0.3s ease;
+}
+
+.dreamEntry:hover {
+  background: rgba(139, 92, 246, 0.15);
+  border-color: rgba(139, 92, 246, 0.3);
+}
+
+.dreamDate {
+  font-size: 0.75rem;
+  color: rgba(199, 184, 255, 0.5);
+  margin-bottom: 0.25rem;
+}
+
+.dreamText {
+  font-size: 0.875rem;
+  color: #e2e8f0;
+  line-height: 1.5;
+}
+
+.lucidityTips {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+@media (max-width: 768px) {
+  .lucidityTips {
+    grid-template-columns: 1fr;
+  }
+}
+
+.tip {
+  background: rgba(13, 13, 26, 0.6);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  border-radius: 12px;
+  padding: 1.25rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.tip:hover {
+  background: rgba(139, 92, 246, 0.1);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(139, 92, 246, 0.2);
+}
+
+.tipIcon {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+.tipTitle {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #c9b8ff;
+  margin-bottom: 0.5rem;
+}
+
+.tipText {
+  font-size: 0.8rem;
+  color: rgba(199, 184, 255, 0.6);
+  line-height: 1.5;
+}
+
+.dictionary {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+@media (max-width: 768px) {
+  .dictionary {
+    grid-template-columns: 1fr;
+  }
+}
+
+.symbol {
+  background: rgba(13, 13, 26, 0.6);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  border-radius: 12px;
+  padding: 1rem;
+  transition: all 0.3s ease;
+}
+
+.symbol:hover {
+  background: rgba(139, 92, 246, 0.1);
+  border-color: rgba(139, 92, 246, 0.4);
+}
+
+.symbolHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.symbolIcon {
+  font-size: 1.5rem;
+}
+
+.symbolName {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #c9b8ff;
+}
+
+.symbolMeaning {
+  font-size: 0.8rem;
+  color: rgba(199, 184, 255, 0.6);
+  line-height: 1.5;
+}
+
+.empty {
+  text-align: center;
+  padding: 2rem;
+  color: rgba(199, 184, 255, 0.4);
+  font-style: italic;
+}
+
+.floatingSymbols {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.floatingSymbol {
+  position: absolute;
+  font-size: 1.5rem;
+  opacity: 0.15;
+  animation: drift 20s linear infinite;
+}
+
+@keyframes drift {
+  0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+  10% { opacity: 0.15; }
+  90% { opacity: 0.15; }
+  100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+}

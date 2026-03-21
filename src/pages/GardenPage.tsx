@@ -36,6 +36,9 @@ import CloudPaint from '../components/sections/CloudPaint';
 import PuzzleBox from '../components/sections/PuzzleBox';
 import MoodMosaic from '../components/sections/MoodMosaic';
 import AmbientGarden from '../components/sections/AmbientGarden';
+import DreamWeaver from '../components/sections/DreamWeaver';
+import MoonPhase from '../components/sections/MoonPhase';
+import WindRoses from '../components/sections/WindRoses';
 
 export default function GardenPage() {
   return (
@@ -62,6 +65,9 @@ export default function GardenPage() {
       <PuzzleBox />
       <MoodMosaic />
       <AmbientGarden />
+      <DreamWeaver />
+      <MoonPhase />
+      <WindRoses />
       <PlantTracker />
       <WaterGarden />
       <FocusTimer />
